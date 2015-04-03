@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    {MobileAppHeaders}
+    <meta charset="utf-8">
+    <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+    {block:Description}
+    <meta name="description" content="{MetaDescription}">
+    {/block:Description}
+    <meta name="color:TextColor" content="#000000"/>
+    <meta name="color:PostBackgroundColor" content="#ffffff"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <style>
+      html, body, * {
+        writing-mode:
+          vertical-rl;
+        -ms-writing-mode:
+          tb-rl;
+        -webkit-writing-mode:
+          vertical-rl;
+        -epub-writing-mode:
+          vertical-rl;
+        text-orientation:
+          mixed;
+        -webkit-text-orientation:
+          mixed;
+        direction:
+          ltr;
+      }
+      body {
+        -webkit-text-size-adjust:
+          100%;
+      }
+      body {
+        color     : {color:TextColor};
+        background: {BackgroundColor};
+      }
+      h1, h2, h3, h4, h5, h6 {
+        color: {TitleColor};
+      }
+      a {
+        color: {AccentColor};
+      }
+      article.post {
+        color     : {color:TextColor};
+        background: {color:PostBackgroundColor};
+      }
+      div.reblog-control, div.like-control {
+        display:inline-block;
+      }
+      iframe#youtube_iframe {
+        max-width:100%;
+      }
+      iframe.tumblr_audio_player {
+        width:100%;
+      }
+      img {
+          max-width:100%;
+      }
+      {CustomCSS}
+    </style>
+  </head>
+
+  <body>
+    <section id="page">
+      <header id="page-header">
+        {block:ShowHeaderImage}{/block:ShowHeaderImage}
+        {block:HideHeaderImage}{/block:HideHeaderImage}
+
+        {block:ShowAvatar}{/block:ShowAvatar}
+        {block:HideAvatar}{/block:HideAvatar}
+
+        {block:ShowTitle}<h1><a href="{BlogURL}">{Title}</a></h1>{/block:ShowTitle}
+        {block:HideTitle}{/block:HideTitle}
+
+        {block:ShowDescription}<p class="description">{Description}</p>{/block:ShowDescription}
+        {block:HideDescription}{/block:HideDescription}
+      </header>
+
+      <nav id="page-nav">
+        {block:HasPages}
+        {block:Pages}
+        <a href="{URL}">{Label}</a>
+        {/block:Pages}
+        {/block:HasPages}
+
+        <a href="/archive">アーカイブ</a>
+
+        {block:SubmissionsEnabled}<a href="/submit" class="submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}
+
+        {block:AskEnabled}<a href="/ask" class="ask">{AskLabel}</a>{/block:AskEnabled}
+
+        {block:NextPage}<a href="{NextPage}">次頁</a>{/block:NextPage}
+        {block:PreviousPage}<a href="{PreviousPage}">前頁</a>{/block:PreviousPage}
+      </nav>
+
+      <section id="posts">
+        {block:Posts}
+          <article class="post {block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} active exposed{/block:PermalinkPage}" {block:Date}data-post-id="post_{PostID}"{/block:Date}>
+            {block:Text}
+              {block:Title}
+                  <h3><a href="{Permalink}">{Title}</a></h3>
+              {/block:Title}
+              {Body}
+            {/block:Text}
+
+            {block:Photo}
+              <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+              {block:Caption}
+                <div class="caption">{Caption}</div>
+              {/block:Caption}
+            {/block:Photo}
+
+            {block:Panorama}
+              {LinkOpenTag}
+                  <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+              {LinkCloseTag}
+
+              {block:Caption}
+                <div class="caption">{Caption}</div>
+              {/block:Caption}
+            {/block:Panorama}
+
+            {block:Photoset}
+              {Photoset-500}{block:Caption}
+                <div class="caption">{Caption}</div>
+              {/block:Caption}
+            {/block:Photoset}
+
+            {block:Quote}
+              "{Quote}"
+
+              {block:Source}
+                <div class="source">- {Source}</div>
+              {/block:Source}
+            {/block:Quote}
+
+            {block:Link}
+              <a href="{URL}" class="link" {Target}>{Name}</a>
+              {block:Description}
+                <div class="description">{Description}</div>
+              {/block:Description}
+            {/block:Link}
+
+            {block:Chat}
+              {block:Title}
+                <h3><a href="{Permalink}">{Title}</a></h3>
+              {/block:Title}
+
+              <ul class="chat">
+                {block:Lines}
+                  <li class="{Alt} user_{UserNumber}">
+                      {block:Label}
+                        <span class="label">{Label}</span>
+                      {/block:Label}{Line}
+                  </li>
+                {/block:Lines}
+              </ul>
+            {/block:Chat}
+
+            {block:Video}
+              {Video-500}{block:Caption}
+                  <div class="caption">{Caption}</div>
+              {/block:Caption}
+            {/block:Video}
+
+            {block:Audio}
+              {block:AudioEmbed}
+                {AudioEmbed-250}
+              {/block:AudioEmbed}
+              {block:Caption}
+                <div class="caption">{Caption}</div>
+              {/block:Caption}
+            {/block:Audio}
+
+            {block:Answer}
+            {/block:Answer}
+
+            <footer class="article-footer">
+              {block:NoteCount}
+                 <a href="{PostNotesURL}">{NoteCountWithLabel}</a>
+              {/block:NoteCount}
+              {block:date}{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero} {24HourWithZero}:{Minutes}:{Seconds} {/block:date}
+              <a href="{Permalink}" class="share-item permalink">{lang:Permalink}</a>
+              <div class="control reblog-control">{ReblogButton}</div>
+              <div class="control like-control">{LikeButton}</div>
+              {block:PostNotes}
+                {PostNotes}
+              {/block:PostNotes}
+            </footer>
+          </article>
+        {/block:Posts}
+      </section>
+
+      <nav id="page-nav">
+        {block:HasPages}
+        {block:Pages}
+        <a href="{URL}">{Label}</a>
+        {/block:Pages}
+        {/block:HasPages}
+
+        <a href="/archive">アーカイブ</a>
+
+        {block:SubmissionsEnabled}<a href="/submit" class="submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}
+
+        {block:AskEnabled}<a href="/ask" class="ask">{AskLabel}</a>{/block:AskEnabled}
+
+        {block:NextPage}<a href="{NextPage}">次頁</a>{/block:NextPage}
+        {block:PreviousPage}<a href="{PreviousPage}">前頁</a>{/block:PreviousPage}
+      </nav>
+    </section>
+  </body>
+</html>
