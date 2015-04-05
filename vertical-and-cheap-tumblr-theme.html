@@ -1,18 +1,19 @@
 <!DOCTYPE html>
+<!-- 縦書き向けの安っぽいTumblrテーマ 製作：メタスキーマ -->
 <html lang="ja">
   <head>
     {MobileAppHeaders}
     <meta charset="utf-8">
     <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
-    {block:Description}
-    <meta name="description" content="{MetaDescription}">
-    {/block:Description}
-    <meta name="color:TextColor" content="#000000"/>
-    <meta name="color:PostBackgroundColor" content="#ffffff"/>
+    {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+    <meta name="color:Foreground Color"         content="{TitleColor}"     />
+    <meta name="color:Background Color"         content="{BackgroundColor}"/>
+    <meta name="color:Content Foreground Color" content="{TitleColor}"     />
+    <meta name="color:Content Background Color" content="{BackgroundColor}"/>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <link rel="shortcut icon" href="{Favicon}">
-    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
     <style>
       html, body, * {
         writing-mode:
@@ -31,12 +32,9 @@
           ltr;
       }
       body {
-        -webkit-text-size-adjust:
-          100%;
-      }
-      body {
-        color     : {color:TextColor};
-        background: {BackgroundColor};
+        color     : {color:Foreground Color};
+        background: {color:Background Color};
+        -webkit-text-size-adjust:100%;
       }
       h1, h2, h3, h4, h5, h6 {
         color: {TitleColor};
@@ -44,13 +42,23 @@
       a {
         color: {AccentColor};
       }
+      nav {
+        margin:1em;
+      }
+      footer.article-footer {
+        margin:1em;
+      }
       article.post {
-        color     : {color:TextColor};
-        background: {color:PostBackgroundColor};
+        color     : {color:Content Foreground Color};
+        background: {color:Content Background Color};
         margin:1em;
       }
       div.reblog-control, div.like-control {
         display:inline-block;
+        margin:0;
+        padding:0;
+        text-align:center;
+        vertical-align:bottom;
       }
       iframe#youtube_iframe {
         max-width:100%;
@@ -90,12 +98,46 @@
 
         <a href="/archive">{lang:Archive}</a>
 
-        {block:SubmissionsEnabled}<a href="/submit" class="submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}
+        {block:SubmissionsEnabled}
+          <a href="/submit" class="submit">{SubmitLabel}</a>
+        {/block:SubmissionsEnabled}
 
-        {block:AskEnabled}<a href="/ask" class="ask">{AskLabel}</a>{/block:AskEnabled}
+        {block:AskEnabled}
+          <a href="/ask" class="ask">{AskLabel}</a>
+        {/block:AskEnabled}
 
-        {block:NextPage}<a href="{NextPage}">{lang:Next}</a>{/block:NextPage}
-        {block:PreviousPage}<a href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
+        {block:Pagination}
+          {lang:Page CurrentPage of TotalPages} 
+          {block:NextPage}
+            <a href="{NextPage}">{lang:Next page}</a>
+          {/block:NextPage}
+
+          {block:PreviousPage}
+            <a href="{PreviousPage}">{lang:Previous page}</a>
+          {/block:PreviousPage}
+        {/block:Pagination}
+
+        {block:PermalinkPagination}
+          {block:NextPost}
+            <a href="{NextPost}">{lang:Next post}</a>
+          {/block:NextPost}
+
+          {block:PreviousPost}
+            <a href="{PreviousPost}">{lang:Previous post}</a>
+          {/block:PreviousPost}
+        {/block:PermalinkPagination}
+
+        {block:DayPage}
+          {block:DayPagination}
+            {block:NextDayPage}
+              <a href="{NextDayPage}">{lang:Next day}<a>
+            {/block:NextDayPage}
+
+            {block:PreviousDayPage}
+              <a href="{PreviousDayPage}">{lang:Previous day}<a>
+            {/block:PreviousDayPage}
+          {/block:DayPagination}
+        {/block:DayPage}
       </nav>
 
       <section id="posts">
@@ -215,4 +257,3 @@
     </section>
   </body>
 </html>
-<!-- メタスキーマ作 -->
