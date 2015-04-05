@@ -39,6 +39,10 @@
       h1, h2, h3, h4, h5, h6 {
         color: {TitleColor};
       }
+      h1.blog_title {
+        font-family:{TitleFont};
+        font-weight:{TitleFontWeight};
+      }
       a {
         color: {AccentColor};
       }
@@ -77,18 +81,28 @@
     <section id="page">
       <header id="page-header">
         {block:ShowHeaderImage}
+          <div class="header_image"><a href="/" {Target}><img src="{HeaderImage}" alt=""/></a></div>
         {/block:ShowHeaderImage}
         {block:HideHeaderImage}
         {/block:HideHeaderImage}
 
-        {block:ShowAvatar}{/block:ShowAvatar}
-        {block:HideAvatar}{/block:HideAvatar}
+        {block:ShowAvatar}
+          <div class="avatar {AvatarShape}"><a href="/" {Target}"><img src="{PortraitURL-128}" alt="{Title}"></a></div>
+        {/block:ShowAvatar}
+        {block:HideAvatar}
+        {/block:HideAvatar}
 
-        {block:ShowTitle}<h1><a href="{BlogURL}">{Title}</a></h1>{/block:ShowTitle}
-        {block:HideTitle}{/block:HideTitle}
+        {block:ShowTitle}
+        <h1 class="blog_title"><a href="{BlogURL}">{Title}</a></h1>
+        {/block:ShowTitle}
+        {block:HideTitle}
+        {/block:HideTitle}
 
-        {block:ShowDescription}<p class="description">{Description}</p>{/block:ShowDescription}
-        {block:HideDescription}{/block:HideDescription}
+        {block:ShowDescription}
+        <p class="description">{Description}</p>
+        {/block:ShowDescription}
+        {block:HideDescription}
+        {/block:HideDescription}
       </header>
 
       <nav id="page-nav">
