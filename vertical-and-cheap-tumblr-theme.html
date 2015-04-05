@@ -167,11 +167,26 @@
             {/block:Text}
 
             {block:Photo}
-              <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+              {LinkOpenTag}
+              <img src="{PhotoURL-250}" alt="{PhotoAlt}"/>
+              {LinkCloseTag}
               {block:Caption}
                 <div class="caption">{Caption}</div>
               {/block:Caption}
             {/block:Photo}
+
+            {block:Photoset}
+              {block:Photos}
+                <img src="{PhotoURL-250}" width="{PhotoWidth-250}" height="{PhotoHeight-250}"/>
+                {block:Caption}
+                  <div class="caption">{Caption}</div>
+                {/block:Caption}
+              {/block:Photos}
+
+              {block:Caption}
+                <div class="caption">{Caption}</div>
+              {/block:Caption}
+            {/block:Photoset}
 
             {block:Panorama}
               {LinkOpenTag}
@@ -183,22 +198,15 @@
               {/block:Caption}
             {/block:Panorama}
 
-            {block:Photoset}
-              {Photoset-500}{block:Caption}
-                <div class="caption">{Caption}</div>
-              {/block:Caption}
-            {/block:Photoset}
-
             {block:Quote}
-              "{Quote}"
-
+              <h3>"{Quote}"</h3>
               {block:Source}
-                <div class="source">- {Source}</div>
+                <div class="source">－　{Source}</div>
               {/block:Source}
             {/block:Quote}
 
             {block:Link}
-              <a href="{URL}" class="link" {Target}>{Name}</a>
+              <h3><a href="{URL}" class="link" {Target}>{Name}</a></h3>
               {block:Description}
                 <div class="description">{Description}</div>
               {/block:Description}
@@ -214,14 +222,17 @@
                   <li class="{Alt} user_{UserNumber}">
                       {block:Label}
                         <span class="label">{Label}</span>
-                      {/block:Label}{Line}
+                      {/block:Label}
+                      &nbsp;
+                      {Line}
                   </li>
                 {/block:Lines}
               </ul>
             {/block:Chat}
 
             {block:Video}
-              {Video-500}{block:Caption}
+              {Video-500}
+              {block:Caption}
                   <div class="caption">{Caption}</div>
               {/block:Caption}
             {/block:Video}
@@ -240,13 +251,47 @@
 
             <footer class="article-footer">
               {block:NoteCount}
-                 <a href="{PostNotesURL}">{NoteCountWithLabel}</a>
+                 <a href="{Permalink}#PostNotes">{NoteCountWithLabel}</a>
               {/block:NoteCount}
-              {block:date}{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero} {24HourWithZero}:{Minutes}:{Seconds} {/block:date}
+
+              {block:Date}
+                {Year}/{MonthNumberWithZero}/{DayOfMonthWithZero} {24HourWithZero}:{Minutes}:{Seconds}
+              {/block:Date}
+
               <a href="{Permalink}" class="share-item permalink">{lang:Permalink}</a>
+
               <div class="control reblog-control">{ReblogButton}</div>
+
               <div class="control like-control">{LikeButton}</div>
+
+              {block:HasTags}
+                <br/>
+                {block:Tags}
+                  <a href="{TagURL}">#{Tag}</a> 
+                {/block:Tags}
+              {/block:HasTags}
+
               {block:PostNotes}
+                {block:ContentSource}
+                  <br/>
+                  <a href="{SourceURL}">
+                  {lang:Source}:
+                  {block:SourceLogo}
+                      <img src="{BlackLogoURL}" width="{LogoWidth}"
+                      height="{LogoHeight}" alt="{SourceTitle}" />
+                  {/block:SourceLogo}
+                  {block:NoSourceLogo}
+                      {SourceLink}
+                  {/block:NoSourceLogo}
+                  </a>
+                {/block:ContentSource}
+
+                {block:RebloggedFrom}
+                  <br/>
+                  {lang:Originally from ReblogRootTitle 2} 
+                {/block:RebloggedFrom}
+
+                <a id="PostNotes"/>
                 {PostNotes}
               {/block:PostNotes}
             </footer>
@@ -271,5 +316,8 @@
         {block:PreviousPage}<a href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
       </nav>
     </section>
+    <footer>
+      {lang:Powered by Tumblr 2}
+    </footer>
   </body>
 </html>
