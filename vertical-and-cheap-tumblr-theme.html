@@ -99,17 +99,17 @@
         {/block:HideTitle}
 
         {block:ShowDescription}
-        <p class="description">{Description}</p>
+          <p class="description">{Description}</p>
         {/block:ShowDescription}
         {block:HideDescription}
         {/block:HideDescription}
       </header>
 
-      <nav id="page-nav">
+      <nav id="page-nav-header">
         {block:HasPages}
-        {block:Pages}
-        <a href="{URL}">{Label}</a>
-        {/block:Pages}
+          {block:Pages}
+            <a href="{URL}">{Label}</a>
+          {/block:Pages}
         {/block:HasPages}
 
         <a href="/archive">{lang:Archive}</a>
@@ -168,7 +168,7 @@
 
             {block:Photo}
               {LinkOpenTag}
-              <img src="{PhotoURL-250}" alt="{PhotoAlt}"/>
+                <img src="{PhotoURL-250}" alt="{PhotoAlt}"/>
               {LinkCloseTag}
               {block:Caption}
                 <div class="caption">{Caption}</div>
@@ -190,7 +190,7 @@
 
             {block:Panorama}
               {LinkOpenTag}
-                  <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
               {LinkCloseTag}
 
               {block:Caption}
@@ -233,7 +233,7 @@
             {block:Video}
               {Video-500}
               {block:Caption}
-                  <div class="caption">{Caption}</div>
+                <div class="caption">{Caption}</div>
               {/block:Caption}
             {/block:Video}
 
@@ -251,14 +251,14 @@
 
             <footer class="article-footer">
               {block:NoteCount}
-                 <a href="{Permalink}#PostNotes">{NoteCountWithLabel}</a>
+                <a href="{Permalink}#PostNotes">{NoteCountWithLabel}</a> 
               {/block:NoteCount}
 
               {block:Date}
-                {Year}/{MonthNumberWithZero}/{DayOfMonthWithZero} {24HourWithZero}:{Minutes}:{Seconds}
+                {Year}/{MonthNumberWithZero}/{DayOfMonthWithZero} {24HourWithZero}:{Minutes}:{Seconds} 
               {/block:Date}
 
-              <a href="{Permalink}" class="share-item permalink">{lang:Permalink}</a>
+              <a href="{Permalink}" class="share-item permalink">{lang:Permalink}</a> 
 
               <div class="control reblog-control">{ReblogButton}</div>
 
@@ -299,21 +299,55 @@
         {/block:Posts}
       </section>
 
-      <nav id="page-nav">
+      <nav id="page-nav-footer">
         {block:HasPages}
-        {block:Pages}
-        <a href="{URL}">{Label}</a>
-        {/block:Pages}
+          {block:Pages}
+            <a href="{URL}">{Label}</a>
+          {/block:Pages}
         {/block:HasPages}
 
         <a href="/archive">{lang:Archive}</a>
 
-        {block:SubmissionsEnabled}<a href="/submit" class="submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}
+        {block:SubmissionsEnabled}
+          <a href="/submit" class="submit">{SubmitLabel}</a>
+        {/block:SubmissionsEnabled}
 
-        {block:AskEnabled}<a href="/ask" class="ask">{AskLabel}</a>{/block:AskEnabled}
+        {block:AskEnabled}
+          <a href="/ask" class="ask">{AskLabel}</a>
+        {/block:AskEnabled}
 
-        {block:NextPage}<a href="{NextPage}">{lang:Next}</a>{/block:NextPage}
-        {block:PreviousPage}<a href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
+        {block:Pagination}
+          {lang:Page CurrentPage of TotalPages} 
+          {block:NextPage}
+            <a href="{NextPage}">{lang:Next page}</a>
+          {/block:NextPage}
+
+          {block:PreviousPage}
+            <a href="{PreviousPage}">{lang:Previous page}</a>
+          {/block:PreviousPage}
+        {/block:Pagination}
+
+        {block:PermalinkPagination}
+          {block:NextPost}
+            <a href="{NextPost}">{lang:Next post}</a>
+          {/block:NextPost}
+
+          {block:PreviousPost}
+            <a href="{PreviousPost}">{lang:Previous post}</a>
+          {/block:PreviousPost}
+        {/block:PermalinkPagination}
+
+        {block:DayPage}
+          {block:DayPagination}
+            {block:NextDayPage}
+              <a href="{NextDayPage}">{lang:Next day}<a>
+            {/block:NextDayPage}
+
+            {block:PreviousDayPage}
+              <a href="{PreviousDayPage}">{lang:Previous day}<a>
+            {/block:PreviousDayPage}
+          {/block:DayPagination}
+        {/block:DayPage}
       </nav>
     </section>
     <footer>
