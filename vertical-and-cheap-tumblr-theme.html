@@ -6,10 +6,12 @@
     <meta charset="utf-8">
     <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
     {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
-    <meta name="color:Foreground Color"         content="{TitleColor}"     />
-    <meta name="color:Background Color"         content="{BackgroundColor}"/>
-    <meta name="color:Content Foreground Color" content="{TitleColor}"     />
-    <meta name="color:Content Background Color" content="{BackgroundColor}"/>
+    <meta name="color:Foreground Color"            content="{TitleColor}"     />
+    <meta name="color:Background Color"            content="{BackgroundColor}"/>
+    <meta name="color:Navigation Foreground Color" content="{TitleColor}"     />
+    <meta name="color:Navigation Background Color" content="{BackgroundColor}"/>
+    <meta name="color:Content Foreground Color"    content="{TitleColor}"     />
+    <meta name="color:Content Background Color"    content="{BackgroundColor}"/>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <link rel="shortcut icon" href="{Favicon}">
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
@@ -47,6 +49,8 @@
         color: {AccentColor};
       }
       nav {
+        color     : {color:Navigation Foreground Color};
+        background: {color:Navigation Background Color};
         margin:1em;
       }
       footer.article-footer {
@@ -72,6 +76,9 @@
       }
       img {
         max-width:100%;
+      }
+      form.search {
+        margin:0.5rem;
       }
       {CustomCSS}
     </style>
@@ -111,6 +118,8 @@
             <a href="{URL}">{Label}</a>
           {/block:Pages}
         {/block:HasPages}
+
+        <a href="#search">{lang:Search}</a>
 
         <a href="/archive">{lang:Archive}</a>
 
@@ -155,6 +164,15 @@
           {/block:DayPagination}
         {/block:DayPage}
       </nav>
+
+      {block:SearchPage}
+        <div class="search-header">
+          <h2 class="search-title">
+            {lang:SearchResultCount results for SearchQuery}
+            {block:NoSearchResults}{lang:Sorry no search results found}{/block:NoSearchResults}
+          </h2>
+        </div>
+      {/block:SearchPage}
 
       <section id="posts">
         {block:Posts}
@@ -350,6 +368,10 @@
         {/block:DayPage}
       </nav>
     </section>
+    <form id="search" action="/search" method="get">
+      <input type="text" name="q" value="{SearchQuery}"/>
+      <input type="submit" value="{lang:Search}"/>
+    </form>
     <footer>
       {lang:Powered by Tumblr 2}
     </footer>
