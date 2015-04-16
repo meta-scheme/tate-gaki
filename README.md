@@ -1,2 +1,2 @@
-# shitaji
-Tumblrテーマ「下地」
+# tata-gaki
+Tumblrテーマ「縦書き」
