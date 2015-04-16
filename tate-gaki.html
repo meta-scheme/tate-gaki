@@ -3,10 +3,10 @@
 <html lang="ja">
   <head>
     {MobileAppHeaders}
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
-    {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
-    <meta name="text:Default Font CSS" content="YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo,Noto Sans Japanese,Times New Roman,Serif!important"/>
+    {block:Description}<meta name="description" content="{MetaDescription}"/>{/block:Description}
+    <meta name="text:Default Font CSS" content="YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo,Times New Roman,Serif!important"/>
     <meta name="if:Use Article Border CSS" content="1"/>
     <meta name="text:Article Border CSS" content="border:1px dotted"/>
     <meta name="image:Background Image" content=""/>
@@ -22,7 +22,6 @@
     <link rel="shortcut icon" href="{Favicon}">
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
     <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
-    <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css">
     <style>
       @charset 'utf-8';
       html, body, * {
@@ -387,11 +386,8 @@
               {/block:Date}
 
               <a href="{Permalink}" class="share-item permalink">{lang:Permalink}</a> 
-
               <div class="control reblog-control">{ReblogButton}</div>
-
               <div class="control like-control">{LikeButton}</div>
-
               {block:HasTags}
                 <div>
                 {block:Tags}
@@ -435,7 +431,6 @@
         </form>
         <div class="colophon">
           <span class="powered-by-tumblr">{lang:Powered by Tumblr 2}</span>
-          <span class="install-this-theme"><a href="http://www.tumblr.com/theme/39699">{lang:Install this theme}</a></span>
         </div>
       </footer>
     </section>
