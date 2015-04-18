@@ -23,7 +23,6 @@
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
     <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
     <style>
-      @charset 'utf-8';
       html, body, * {
         writing-mode:
           vertical-rl;
@@ -66,6 +65,19 @@
         margin-right:
           0.5rem;
       }
+
+      header#page-header, nav#page-header-nav {
+        text-align:
+          center;
+        margin-left:
+          auto;
+        margin-right:
+          auto;
+      }
+      span.nav-span {
+        display:
+          inline-block;
+      }
       header#page-header {
         color:
           {color:Page Header Foreground Color};
@@ -87,16 +99,12 @@
           0.5rem;
       }
       p.description {
-        text-align:
-          left;
         font-size:
           medium;
         margin:
           0.5rem;
       }
       nav, nav * {
-        text-align:
-          left;
         font-size:
           small;
       }
@@ -145,7 +153,7 @@
         max-width:
           100%;
       }
-      form#search {
+      form#header-search, form#footer-search {
         margin:
           0.5rem;
       }
@@ -169,6 +177,10 @@
         text-align:
           right;
       }
+      div.header-image, div.header-avatar {
+        text-align:
+         center;
+      }
       {CustomCSS}
     </style>
   </head>
@@ -176,35 +188,46 @@
   <body>
     <section id="page">
       {block:ShowHeaderImage}
-      <header id="header-image">
-        <a href="{BlogURL}#page-header" {Target}><img src="{HeaderImage}" alt="{Title}"/></a>
-      </header>
+        <div class="header-image">
+          <a class="header-image" href="{BlogURL}" {Target}><img src="{HeaderImage}" alt="{Title}"/></a>
+        </div>
       {/block:ShowHeaderImage}
       {block:HideHeaderImage}
       {/block:HideHeaderImage}
 
       {block:ShowAvatar}
-      <header id="header-avatar" class="avatar {AvatarShape}">
-        <a href="{BlogURL}#page-header" {Target}><img src="{PortraitURL-48}" alt="{Title}"></a>
-      </header>
+        <div class="header-avatar">
+          <a class="header-avatar" href="{BlogURL}" {Target}><img src="{PortraitURL-48}" alt="{Title}"/></a>
+        </div>
       {/block:ShowAvatar}
       {block:HideAvatar}
       {/block:HideAvatar}
 
       <header id="page-header">
-        {block:ShowTitle}<h1 class="blog-title"><a href="{BlogURL}" {Target}>{Title}</a></h1>{/block:ShowTitle}{block:HideTitle}{/block:HideTitle}
-        {block:ShowDescription}<p class="description">{Description}</p>{/block:ShowDescription}{block:HideDescription}{/block:HideDescription}
-        <nav id="page-nav-header">
+        {block:ShowTitle}
+          <h1 class="blog-title">
+            <a href="{BlogURL}" {Target}>{Title}</a>
+          </h1>
+        {/block:ShowTitle}
+        {block:HideTitle}
+        {/block:HideTitle}
+
+        {block:ShowDescription}
+          <p class="description">{Description}</p>
+        {/block:ShowDescription}
+        {block:HideDescription}
+        {/block:HideDescription}
+        <nav id="page-header-nav">
+          <a href="#footer-search">{lang:Search}</a>
           {block:HasPages}
-            <span class="pages-nav">
+            <span class="nav-span pages-nav">
               {block:Pages}
                 <a href="{URL}">{Label}</a>
               {/block:Pages}
             </span>
           {/block:HasPages}
 
-          <span class="misc-nav">
-            <a href="#search">{lang:Search}</a>
+          <span class="nav-span misc-nav">
             <a href="/archive">{lang:Archive}</a>
             {block:SubmissionsEnabled}
               <a href="/submit" class="submit">{SubmitLabel}</a>
@@ -215,7 +238,7 @@
           </span>
 
           {block:Pagination}
-            <span class="pagenation-nav">
+            <span class="nav-span pagenation-nav">
               {block:PreviousPage}
                 <a href="{PreviousPage}"> {lang:Previous page} </a>
               {/block:PreviousPage}
@@ -232,13 +255,12 @@
               {block:NextPage}
                 <a href="{NextPage}"> {lang:Next page} </a>
               {/block:NextPage}
-
-              <span class="text-orientation-upright"> {lang:Page CurrentPage of TotalPages} </span> 
             </span>
+            <span class="text-orientation-upright"> {lang:Page CurrentPage of TotalPages} </span> 
           {/block:Pagination}
 
           {block:PermalinkPagination}
-            <span class="permalink-pagenation-nav">
+            <span class="nav-span permalink-pagenation-nav">
               {block:NextPost}
                 <a href="{NextPost}">{lang:Next post}</a>
               {/block:NextPost}
@@ -250,17 +272,17 @@
           {/block:PermalinkPagination}
 
           {block:DayPage}
-            <span class="day-pagenation-nav">
               {block:DayPagination}
-                {block:NextDayPage}
-                  <a href="{NextDayPage}">{lang:Next day}<a>
-                {/block:NextDayPage}
+                <span class="nav-span day-pagenation-nav">
+                  {block:NextDayPage}
+                    <a href="{NextDayPage}">{lang:Next day}<a>
+                  {/block:NextDayPage}
 
-                {block:PreviousDayPage}
-                  <a href="{PreviousDayPage}">{lang:Previous day}<a>
-                {/block:PreviousDayPage}
+                  {block:PreviousDayPage}
+                    <a href="{PreviousDayPage}">{lang:Previous day}<a>
+                  {/block:PreviousDayPage}
+                </span>
               {/block:DayPagination}
-            </span>
           {/block:DayPage}
         </nav>
 
@@ -424,11 +446,81 @@
           </article>
         {/block:Posts}
       </section>
-      <footer>
-        <form id="search" action="/search" method="get">
-          <input type="text" name="q" value="{SearchQuery}"/>
-          <input type="submit" value="{lang:Search}"/>
-        </form>
+
+      <footer id="page-footer">
+        <nav id="page-header-nav">
+          <form id="footer-search" action="/search" method="get">
+            <input type="text" name="q" value="{SearchQuery}"/>
+            <input type="submit" value="{lang:Search}"/>
+          </form>
+
+          {block:HasPages}
+            <span class="nav-span pages-nav">
+              {block:Pages}
+                <a href="{URL}">{Label}</a> 
+              {/block:Pages}
+            </span>
+          {/block:HasPages}
+
+          <span class="nav-span misc-nav">
+            <a href="/archive">{lang:Archive}</a> 
+            {block:SubmissionsEnabled}
+              <a href="/submit" class="submit">{SubmitLabel}</a> 
+            {/block:SubmissionsEnabled}
+            {block:AskEnabled}
+              <a href="/ask" class="ask">{AskLabel}</a> 
+            {/block:AskEnabled}
+          </span>
+
+          {block:Pagination}
+            <span class="nav-span pagenation-nav">
+              {block:PreviousPage}
+                <a href="{PreviousPage}">{lang:Previous page}</a> 
+              {/block:PreviousPage}
+
+              {block:JumpPagination length="5"}
+                {block:CurrentPage}
+                  <span class="text-orientation-upright">{PageNumber}</span> 
+                {/block:CurrentPage}
+                {block:JumpPage}
+                  <span class="text-orientation-upright"><a href="{URL}">{PageNumber}</a></span> 
+                {/block:JumpPage}
+              {/block:JumpPagination}
+
+              {block:NextPage}
+                <a href="{NextPage}">{lang:Next page}</a> 
+              {/block:NextPage}
+            </span>
+            <span class="text-orientation-upright"> {lang:Page CurrentPage of TotalPages} </span> 
+          {/block:Pagination}
+
+          {block:PermalinkPagination}
+            <span class="nav-span permalink-pagenation-nav">
+              {block:NextPost}
+                <a href="{NextPost}">{lang:Next post}</a> 
+              {/block:NextPost}
+
+              {block:PreviousPost}
+                <a href="{PreviousPost}">{lang:Previous post}</a> 
+              {/block:PreviousPost}
+            </span>
+          {/block:PermalinkPagination}
+
+          {block:DayPage}
+            {block:DayPagination}
+              <span class="nav-span day-pagenation-nav">
+                {block:NextDayPage}
+                  <a href="{NextDayPage}">{lang:Next day}<a> 
+                {/block:NextDayPage}
+
+                {block:PreviousDayPage}
+                  <a href="{PreviousDayPage}">{lang:Previous day}<a> 
+                {/block:PreviousDayPage}
+              </span>
+            {/block:DayPagination}
+          {/block:DayPage}
+        </nav>
+
         <div class="colophon">
           <span class="powered-by-tumblr">{lang:Powered by Tumblr 2}</span>
         </div>
