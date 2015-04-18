@@ -14,6 +14,8 @@
     <meta name="color:Body Background Color"        content="{BackgroundColor}"/>
     <meta name="color:Page Header Foreground Color" content="{TitleColor}"     />
     <meta name="color:Page Header Background Color" content="{BackgroundColor}"/>
+    <meta name="color:Page Footer Foreground Color" content="{TitleColor}"     />
+    <meta name="color:Page Footer Background Color" content="{BackgroundColor}"/>
     <meta name="color:Navigation Foreground Color"  content="{TitleColor}"     />
     <meta name="color:Navigation Background Color"  content="{BackgroundColor}"/>
     <meta name="color:Content Foreground Color"     content="{TitleColor}"     />
@@ -66,7 +68,8 @@
           0.5rem;
       }
 
-      header#page-header, nav#page-header-nav {
+      header#page-header, nav#page-header-nav,
+      footer#page-footer, nav#page-footer-nav{
         text-align:
           center;
         margin-left:
@@ -83,6 +86,12 @@
           {color:Page Header Foreground Color};
         background-color:
           {color:Page Header Background Color};
+      }
+      footer#page-footer {
+        color:
+          {color:Page Footer Foreground Color};
+        background-color:
+          {color:Page Footer Background Color};
       }
       h1, h2, h3, h4, h5, h6 {
         color:
@@ -217,6 +226,7 @@
         {/block:ShowDescription}
         {block:HideDescription}
         {/block:HideDescription}
+
         <nav id="page-header-nav">
           <span class="nav-span search-nav">
             <a href="#footer-search">{lang:Search}</a>
@@ -450,7 +460,7 @@
       </section>
 
       <footer id="page-footer">
-        <nav id="page-header-nav">
+        <nav id="page-footer-nav">
           <form id="footer-search" action="/search" method="get">
             <input type="text" name="q" value="{SearchQuery}"/>
             <input type="submit" value="{lang:Search}"/>
