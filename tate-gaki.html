@@ -208,7 +208,33 @@
       span.inline-block {
         display:
           inline-block;
-      ]
+      }
+      div.submitter-information {
+      }
+      div.question {
+        border:
+          1px solid {color:Content Foreground Color};
+      }
+      iframe#submit_form, form#ask_form * {
+        writing-mode:
+          horizontal-tb;
+        -ms-writing-mode:
+          lr-tb;
+        -webkit-writing-mode:
+          horizontal-tb;
+        -epub-writing-mode:
+          horizontal-tb;
+        text-orientation:
+          mixed;
+        -webkit-text-orientation:
+          mixed;
+        direction:
+          ltr;
+      }
+      iframe#submit_form, form#ask_form {
+        max-width:
+          100%;
+      }
       {CustomCSS}
     </style>
   </head>
@@ -335,6 +361,12 @@
       <section id="posts">
         {block:Posts}
           <article class="post {block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} active exposed{/block:PermalinkPage}" {block:Date}data-post-id="post_{PostID}"{/block:Date}>
+            {block:Submission}
+              <div class="submitter">
+                <img class="submitter-avatar" src="{SubmitterPortraitURL-16}"/> {lang:Posted by PostAuthorName 2}
+              </div>
+            {/block:Submission}
+
             {block:Text}
               {block:Title}
                 <h3><a href="{Permalink}">{Title}</a></h3>
@@ -435,6 +467,26 @@
             {/block:Audio}
 
             {block:Answer}
+              <div class="question">
+                <div class="asker">
+                  <img class="asker-avatar" src="{AskerPortraitURL-16}" alt=""/> {lang:Asker asked 2}
+                </div>
+                <div class="asker-question">{Question}</div>
+              </div>
+
+              {block:Answerer}
+                <div class="answer">
+                  <div class="answerer">
+                    <img class="answerer-avatar" src="{AnswererPortraitURL-16}" alt="">
+                    {Answerer}
+                  </div>
+                  <div class="answerer-answer">{Answer}</div>
+                </div>
+              {/block:Answerer}
+
+              <div class="replies">
+                  {Replies}
+              </div>
             {/block:Answer}
 
             <footer class="article-footer">
