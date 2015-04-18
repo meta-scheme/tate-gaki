@@ -125,6 +125,8 @@
         margin:
           0.5rem;
       }
+      section#posts {
+      }
       article.post {
         color:
           {color:Content Foreground Color};
@@ -150,15 +152,28 @@
         vertical-align:
           text-top;
       }
-      iframe#youtube_iframe {
+      div.html_photoset {
+        text-align:
+          left;
+      }
+      div.embed-wrapper, div.tumblr_video_container {
+        max-width:
+          100%;
+        text-align:
+          left;
+        margin-left:
+          auto;
+        margin-right:
+          auto;
+      }
+      div.embed-wrapper   iframe#youtube_iframe,
+      div.embed-wrapper   iframe.tumblr_audio_player,
+      div.embed-wrapper   iframe.tumblr_video_iframe,
+      div.embed-wrapper > iframe {
         max-width:
           100%;
       }
-      iframe.tumblr_audio_player {
-        max-width:
-          100%;
-      }
-      img {
+      img.header-image, img.photo-content {
         max-width:
           100%;
       }
@@ -190,6 +205,10 @@
         text-align:
          left;
       }
+      span.inline-block {
+        display:
+          inline-block;
+      ]
       {CustomCSS}
     </style>
   </head>
@@ -198,7 +217,7 @@
     <section id="page">
       {block:ShowHeaderImage}
         <div class="header-image">
-          <a class="header-image" href="{BlogURL}" {Target}><img src="{HeaderImage}" alt="{Title}"/></a>
+          <a class="header-image" href="{BlogURL}" {Target}><img class="header-image" src="{HeaderImage}" alt="{Title}"/></a>
         </div>
       {/block:ShowHeaderImage}
       {block:HideHeaderImage}
@@ -334,7 +353,9 @@
 
             {block:Photoset}
               {block:Photos}
-                <img class="photo-content" src="{PhotoURL-250}" alt="{PhotoAlt}"/>
+                {LinkOpenTag}
+                  <img class="photo-content" src="{PhotoURL-250}" alt="{PhotoAlt}"/>
+                {LinkCloseTag}
                 {block:Caption}
                   <div class="caption">{Caption}</div>
                 {/block:Caption}
@@ -347,7 +368,7 @@
 
             {block:Panorama}
               {LinkOpenTag}
-                <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                <img class="photo-content" src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
               {LinkCloseTag}
 
               {block:Caption}
@@ -388,7 +409,9 @@
             {/block:Chat}
 
             {block:Video}
-              {Video-250}
+              <div class="embed-wrapper">
+                {Video-250}
+              </div>
               {block:Caption}
                 <div class="caption">{Caption}</div>
               {/block:Caption}
@@ -396,8 +419,11 @@
 
             {block:Audio}
               {block:AudioEmbed}
-                {AudioEmbed-250}
+                <div class="embed-wrapper">
+                  {AudioEmbed-250}
+                </div>
               {/block:AudioEmbed}
+
               {block:Caption}
                 <div class="caption">{Caption}</div>
               {/block:Caption}
@@ -420,9 +446,12 @@
                 {Year}/{MonthNumberWithZero}/{DayOfMonthWithZero} {24HourWithZero}:{Minutes}:{Seconds} 
               {/block:Date}
 
-              <a href="{Permalink}" class="share-item permalink">{lang:Permalink}</a> 
+              <span class="inline-block"><a href="{Permalink}" class="share-item permalink">{lang:Permalink}</a></span> 
+
               <div class="control reblog-control">{ReblogButton}</div>
+
               <div class="control like-control">{LikeButton}</div>
+
               {block:HasTags}
                 <div>
                 {block:Tags}
