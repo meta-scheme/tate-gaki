@@ -10,16 +10,16 @@
     <meta name="if:Use Article Border CSS" content="1"/>
     <meta name="text:Article Border CSS" content="border:1px dotted"/>
     <meta name="image:Background Image" content=""/>
-    <meta name="color:Body Foreground Color"        content="{TitleColor}"     />
-    <meta name="color:Body Background Color"        content="{BackgroundColor}"/>
-    <meta name="color:Page Header Foreground Color" content="{TitleColor}"     />
-    <meta name="color:Page Header Background Color" content="{BackgroundColor}"/>
-    <meta name="color:Page Footer Foreground Color" content="{TitleColor}"     />
-    <meta name="color:Page Footer Background Color" content="{BackgroundColor}"/>
-    <meta name="color:Navigation Foreground Color"  content="{TitleColor}"     />
-    <meta name="color:Navigation Background Color"  content="{BackgroundColor}"/>
-    <meta name="color:Content Foreground Color"     content="{TitleColor}"     />
-    <meta name="color:Content Background Color"     content="{BackgroundColor}"/>
+    <meta name="color:Page Header Text Color"          content="{TitleColor}"     />
+    <meta name="color:Page Header Background Color"    content="{BackgroundColor}"/>
+    <meta name="color:Page Footer Text Color"          content="{TitleColor}"     />
+    <meta name="color:Page Footer Background Color"    content="{BackgroundColor}"/>
+    <meta name="color:Navigation Text Color"           content="{TitleColor}"     />
+    <meta name="color:Navigation Background Color"     content="{BackgroundColor}"/>
+    <meta name="color:All Posts Area Text Color"       content="{TitleColor}"     />
+    <meta name="color:All Posts Area Background Color" content="{BackgroundColor}"/>
+    <meta name="color:One Post Area Text Color"        content="{TitleColor}"     />
+    <meta name="color:One Post Area Background Color"  content="{BackgroundColor}"/>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <link rel="shortcut icon" href="{Favicon}">
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
@@ -42,24 +42,20 @@
           ltr;
         font-family:
           {text:Default Font CSS};
-      }
-      .text-orientation-upright {
-        text-orientation:
-          upright;
-        -webkit-text-orientation:
-          upright;
+        box-sizing:
+          border-box;
       }
       body {
         color:
-          {color:Body Foreground Color};
+          {TitleColor};
         background-color:
-          {color:Body Background Color};
+          {BackgroundColor};
         -webkit-text-size-adjust:
           100%;
         background-image:
           url('{image:Background Image}');
         margin-top:
-          1em;
+          2rem;
         margin-bottom:
           0.5rem;
         margin-left:
@@ -67,7 +63,18 @@
         margin-right:
           0.5rem;
       }
-
+      header#page-header {
+        color:
+          {color:Page Header Text Color};
+        background-color:
+          {color:Page Header Background Color};
+      }
+      footer#page-footer {
+        color:
+          {color:Page Footer Text Color};
+        background-color:
+          {color:Page Footer Background Color};
+      }
       header#page-header, nav#page-header-nav,
       footer#page-footer, nav#page-footer-nav{
         text-align:
@@ -77,25 +84,61 @@
         margin-right:
           auto;
       }
-      span.nav-span {
-        display:
-          inline-block;
+      form#header-search, form#footer-search {
+        margin:
+          0.5rem;
       }
-      header#page-header {
-        color:
-          {color:Page Header Foreground Color};
-        background-color:
-          {color:Page Header Background Color};
+      div.header-image, div.header-avatar {
+        overflow:
+          hidden;
+        text-align:
+          left;
       }
-      footer#page-footer {
-        color:
-          {color:Page Footer Foreground Color};
-        background-color:
-          {color:Page Footer Background Color};
+      div.header-image, div.header-avatar ,
+      img.header-image, img.header-avatar ,
+        a.header-image,   a.header-avatar {
+        border:
+          none;
+        text-decoration:
+          none;
       }
-      h1, h2, h3, h4, h5, h6 {
-        color:
-          {TitleColor};
+      div.header-image, img.header-image {
+          max-width:
+            100%;
+      }
+      div.header-image {
+        margin:
+          0.5rem;
+      }
+      img.header-image {
+        max-height:
+          100%;
+      }
+      div.header-avatar {
+        width:
+          48px;
+        height:
+          48px;
+        margin-top:
+          0;
+        margin-bottom:
+          0;
+        margin-left:
+          auto;
+        margin-right:
+          auto;
+        padding:
+          0;
+      }
+      div.header-avatar.circle {
+        border-radius:
+          50%;
+      }
+      img.header-avatar, a.header-avatar {
+        margin:
+          0;
+        padding:
+          0;
       }
       h1.blog-title {
         font-family:
@@ -113,25 +156,43 @@
         margin:
           0.5rem;
       }
+      footer.article-footer {
+        margin:
+          0.5rem;
+        text-align:
+          right;
+      }
+      div.colophon {
+        text-align:
+          right;
+      }
       nav, nav * {
         font-size:
           small;
       }
       nav {
         color:
-          {color:Navigation Foreground Color};
+          {color:Navigation Text Color};
         background-color:
           {color:Navigation Background Color};
         margin:
           0.5rem;
       }
+      span.nav-span {
+        display:
+          inline-block;
+      }
       section#posts {
+        color:
+          {color:All Posts Area Text Color};
+        background-color:
+          {color:All Posts Area Background Color};
       }
       article.post {
         color:
-          {color:Content Foreground Color};
+          {color:One Post Area Text Color};
         background-color:
-          {color:Content Background Color};
+          {color:One Post Area Background Color};
         margin:
           0.5rem;
         padding:
@@ -139,6 +200,16 @@
         {block:IfUseArticleBorderCSS}
           {text:Article Border CSS};
         {/block:IfUseArticleBorderCSS}
+      }
+      div.postnotes, div.postnotes * {
+        text-align:
+          left;
+      }
+      div.submitter-information {
+      }
+      div.question {
+        border:
+          1px solid {color:One Post Area Text Color};
       }
       div.reblog-control, div.like-control {
         display:
@@ -173,47 +244,29 @@
         max-width:
           100%;
       }
-      img.header-image, img.photo-content {
+      img.photo-content {
         max-width:
           100%;
       }
-      form#header-search, form#footer-search {
-        margin:
-          0.5rem;
+      span.inline-block {
+        display:
+          inline-block;
+      }
+      .text-orientation-upright {
+        text-orientation:
+          upright;
+        -webkit-text-orientation:
+          upright;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        color:
+          {TitleColor};
       }
       a {
         color:
           {AccentColor};
         text-decoration:
           none;
-      }
-      footer.article-footer {
-        margin:
-          0.5rem;
-        text-align:
-          right;
-      }
-      div.postnotes, div.postnotes * {
-        text-align:
-          left;
-      }
-      div.colophon {
-        text-align:
-          right;
-      }
-      div.header-image, div.header-avatar {
-        text-align:
-         left;
-      }
-      span.inline-block {
-        display:
-          inline-block;
-      }
-      div.submitter-information {
-      }
-      div.question {
-        border:
-          1px solid {color:Content Foreground Color};
       }
       iframe#submit_form, form#ask_form * {
         writing-mode:
@@ -250,8 +303,8 @@
       {/block:HideHeaderImage}
 
       {block:ShowAvatar}
-        <div class="header-avatar">
-          <a class="header-avatar" href="{BlogURL}" {Target}><img src="{PortraitURL-48}" alt="{Title}"/></a>
+        <div class="header-avatar {AvatarShape}">
+          <a class="header-avatar {AvatarShape}" href="{BlogURL}" {Target}><img class="header-avatar {AvatarShape}" src="{PortraitURL-48}" alt="{Title}"/></a>
         </div>
       {/block:ShowAvatar}
       {block:HideAvatar}
@@ -280,38 +333,38 @@
           {block:HasPages}
             <span class="nav-span pages-nav">
               {block:Pages}
-                <a href="{URL}">{Label}</a>
+                <a href="{URL}">{Label}</a> 
               {/block:Pages}
             </span>
           {/block:HasPages}
 
           <span class="nav-span misc-nav">
-            <a href="/archive">{lang:Archive}</a>
+            <a href="/archive">{lang:Archive}</a> 
             {block:SubmissionsEnabled}
-              <a href="/submit" class="submit">{SubmitLabel}</a>
+              <a href="/submit" class="submit">{SubmitLabel}</a> 
             {/block:SubmissionsEnabled}
             {block:AskEnabled}
-              <a href="/ask" class="ask">{AskLabel}</a>
+              <a href="/ask" class="ask">{AskLabel}</a> 
             {/block:AskEnabled}
           </span>
 
           {block:Pagination}
             <span class="nav-span pagenation-nav">
               {block:PreviousPage}
-                <a href="{PreviousPage}"> {lang:Previous page} </a>
+                <a href="{PreviousPage}">{lang:Previous page}</a> 
               {/block:PreviousPage}
 
               {block:JumpPagination length="5"}
                 {block:CurrentPage}
-                  <span class="text-orientation-upright"> {PageNumber} </span>
+                  <span class="text-orientation-upright">{PageNumber}</span> 
                 {/block:CurrentPage}
                 {block:JumpPage}
-                  <span class="text-orientation-upright"><a href="{URL}"> {PageNumber} </a></span> 
+                  <span class="text-orientation-upright"><a href="{URL}">{PageNumber}</a></span> 
                 {/block:JumpPage}
               {/block:JumpPagination}
 
               {block:NextPage}
-                <a href="{NextPage}"> {lang:Next page} </a>
+                <a href="{NextPage}">{lang:Next page}</a> 
               {/block:NextPage}
             </span>
             <span class="nav-span text-orientation-upright"> {lang:Page CurrentPage of TotalPages} </span> 
@@ -320,27 +373,27 @@
           {block:PermalinkPagination}
             <span class="nav-span permalink-pagenation-nav">
               {block:NextPost}
-                <a href="{NextPost}">{lang:Next post}</a>
+                <a href="{NextPost}">{lang:Next post}</a> 
               {/block:NextPost}
 
               {block:PreviousPost}
-                <a href="{PreviousPost}">{lang:Previous post}</a>
+                <a href="{PreviousPost}">{lang:Previous post}</a> 
               {/block:PreviousPost}
             </span>
           {/block:PermalinkPagination}
 
           {block:DayPage}
-              {block:DayPagination}
-                <span class="nav-span day-pagenation-nav">
-                  {block:NextDayPage}
-                    <a href="{NextDayPage}">{lang:Next day}<a>
-                  {/block:NextDayPage}
+            {block:DayPagination}
+              <span class="nav-span day-pagenation-nav">
+                {block:NextDayPage}
+                  <a href="{NextDayPage}">{lang:Next day}<a> 
+                {/block:NextDayPage}
 
-                  {block:PreviousDayPage}
-                    <a href="{PreviousDayPage}">{lang:Previous day}<a>
-                  {/block:PreviousDayPage}
-                </span>
-              {/block:DayPagination}
+                {block:PreviousDayPage}
+                  <a href="{PreviousDayPage}">{lang:Previous day}<a> 
+                {/block:PreviousDayPage}
+              </span>
+            {/block:DayPagination}
           {/block:DayPage}
         </nav>
 
