@@ -6,7 +6,6 @@
     <meta charset="utf-8"/>
     <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
     {block:Description}<meta name="description" content="{MetaDescription}"/>{/block:Description}
-    <meta name="text:Default Font CSS" content="YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo,Times New Roman,Serif!important"/>
     <meta name="image:Background Image" content=""/>
     <meta name="color:Page Header Text Color"          content="{TitleColor}"     />
     <meta name="color:Page Header Background Color"    content="{BackgroundColor}"/>
@@ -49,7 +48,7 @@
         direction:
           ltr;
         font-family:
-          {text:Default Font CSS};
+          YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo,Times New Roman,{TitleFont},Serif !important;
         box-sizing:
           border-box;
       }
