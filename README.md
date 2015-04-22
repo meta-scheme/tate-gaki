@@ -1,2 +1,2 @@
-# tata-gaki
+# tate-gaki
 Tumblrテーマ「縦書き」
