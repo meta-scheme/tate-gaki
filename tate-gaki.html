@@ -27,6 +27,8 @@
     <meta name="select:One Post Area Border Style" content="groove" title="Groove"/>
     <meta name="select:One Post Area Border Style" content="hidden" title="Hidden"/>
     <meta name="select:One Post Area Border Style" content="none"   title="None"  />
+    <meta name="if:Show Post Author Group Member" content="0"/>
+    <meta name="if:Show Group Members Icon" content="0"/>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <link rel="shortcut icon" href="{Favicon}">
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
@@ -599,6 +601,14 @@
                 </div>
               {/block:HasTags}
 
+              {block:GroupMembers}
+                {block:IfShowPostAuthorGroupMember}
+                  <div class="post-author">
+                    {lang:By PostAuthorName 2}
+                  </div>
+                {/block:IfShowPostAuthorGroupMember}
+              {/block:GroupMembers} 
+
               {block:PostNotes}
                 <div class="postnotes">
                 {block:ContentSource}
@@ -701,6 +711,19 @@
             {/block:DayPagination}
           {/block:DayPage}
         </nav>
+
+        {block:GroupMembers}
+          {block:IfShowGroupMembersIcon}
+            <div class="group-members">
+              <span>{lang:Members} </span>
+              {block:GroupMember}
+                <span class="group-member">
+                  <a href="{GroupMemberURL}" title="{GroupMemberTitle}"><img src="{GroupMemberPortraitURL-16}" title="{GroupMemberName}" alt="{GroupMemberName}"/></a>
+                </span>
+              {/block:GroupMember}
+            </div>
+          {/block:IfShowGroupMembersIcon}
+        {/block:GroupMembers}
 
         <div class="colophon">
           <span class="powered-by-tumblr">{lang:Powered by Tumblr 2}</span>
