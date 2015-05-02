@@ -35,6 +35,8 @@
     <meta name="if:Show Archive Navigation" content="1"/>
     <meta name="if:Show Pagenation Navigation" content="1"/>
     <meta name="if:Show Search Navigation" content="1"/>
+    <meta name="if:Show Following" content="0"/>
+    <meta name="if:Show Likes" content="0"/>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
     <link rel="shortcut icon" href="{Favicon}"/>
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
@@ -225,34 +227,64 @@
         padding:
           0.5rem;
       }
-      article.post.border-style-dotted {
+      article.post.border-style-dotted           ,
+      div.following.border-style-dotted          ,
+      div.likes.border-style-dotted              ,
+      div.likes.border-style-dotted li.like_post {
         border:1px dotted;
       }
-      article.post.border-style-dashed {
+      article.post.border-style-dashed           ,
+      div.following.border-style-dashed          ,
+      div.likes.border-style-dashed              ,
+      div.likes.border-style-dashed li.like_post {
         border:1px dashed;
       }
-      article.post.border-style-solid {
+      article.post.border-style-solid           ,
+      div.following.border-style-solid          ,
+      div.likes.border-style-solid              ,
+      div.likes.border-style-solid li.like_post {
         border:1px solid;
       }
-      article.post.border-style-double {
+      article.post.border-style-double           ,
+      div.following.border-style-double          ,
+      div.likes.border-style-double              ,
+      div.likes.border-style-double li.like_post {
         border:5px double;
       }
-      article.post.border-style-outset {
+      article.post.border-style-outset           ,
+      div.following.border-style-outset          ,
+      div.likes.border-style-outset              ,
+      div.likes.border-style-outset li.like_post {
         border:5px outset;
       }
-      article.post.border-style-inset {
+      article.post.border-style-inset           ,
+      div.following.border-style-inset          ,
+      div.likes.border-style-inset              ,
+      div.likes.border-style-inset li.like_post {
         border:5px inset;
       }
-      article.post.border-style-ridge {
+      article.post.border-style-ridge           ,
+      div.following.border-style-ridge          ,
+      div.likes.border-style-ridge              ,
+      div.likes.border-style-ridge li.like_post {
         border:5px ridge;
       }
-      article.post.border-style-groove {
+      article.post.border-style-groove           ,
+      div.following.border-style-groove          ,
+      div.likes.border-style-groove              ,
+      div.likes.border-style-groove li.like_post {
         border:5px groove;
       }
-      article.post.border-style-hidden {
+      article.post.border-style-hidden           ,
+      div.following.border-style-hidden          ,
+      div.likes.border-style-hidden              ,
+      div.likes.border-style-hidden li.like_post {
         border:hidden;
       }
-      article.post.border-style-none {
+      article.post.border-style-none           ,
+      div.following.border-style-none          ,
+      div.likes.border-style-none              ,
+      div.likes.border-style-none li.like_post {
         border:none;
       }
       div.postnotes, div.postnotes * {
@@ -321,6 +353,77 @@
           {AccentColor};
         text-decoration:
           none;
+      }
+      div.following      ,
+      div.likes          {
+        width:
+          auto;
+      }
+      div.following      ,
+      div.likes          ,
+      div.following-label,
+      div.following-list ,
+      div.likes-label    ,
+      div.likes-list     {
+        padding:
+          0;
+      }
+      div.following      ,
+      div.likes          ,
+      div.following-list ,
+      div.likes-list     {
+        margin:
+          0.5rem;
+      }
+      div.following-label,
+      div.likes-label    {
+        margin:
+          0;
+      }
+      ul#likes {
+        list-style-type:
+          none;
+        text-align:
+          left;
+        margin:
+          0;
+        padding:
+          0;
+      }
+      li.like_post {
+        margin:
+          0.5rem;
+        width:
+          auto;
+      }
+      li.like_post img {
+        max-width: 100%;
+      }
+      li.like_post blockquote {
+        margin:
+          0.5rem;
+        padding:
+          0.5rem;
+      }
+      li.like_post ol, li.like_post ul {
+      }
+      li.like_post .like_link a {
+        font-weight:
+          bold;
+      }
+      li.like_post .like_title {
+        font-weight:
+          bold;
+      }
+      li.like_post .post_info_top {
+        display:
+          none !important;
+      }
+      li.like_post .post_info_bottom {
+        display:
+          block !important;
+        text-align:
+          right;
       }
       iframe#submit_form, form#ask_form * {
         writing-mode:
@@ -709,6 +812,32 @@
       </section>
 
       <footer id="page-footer">
+        {block:Following}
+          {block:IfShowFollowing}
+            <div class="following border-style-{select:One Post Area Border Style}">
+              <div class="following-label">{lang:Following}</div>
+              <div class="following-list">
+                {block:Followed}
+                  <span class="followed">
+                    <a href="{FollowedURL}" title="{FollowedTitle}"><img src="{FollowedPortraitURL-24}" title="{FollowedTitle}" alt="{FollowedTitle}"/></a>
+                  </span>
+                {/block:Followed}
+              </div>
+            </div>
+          {/block:IfShowFollowing}
+        {/block:Following}
+
+        {block:Likes}
+          {block:IfShowLikes}
+            <div class="likes border-style-{select:One Post Area Border Style}">
+              <div class="likes-label">{lang:Liked posts}</div>
+              <div class="likes-list">
+                {Likes limit="10" width="auto" summarize="250"}
+              </div>
+            </div>
+          {/block:IfShowLikes}
+        {/block:Likes}
+
         {block:IfShowPageFooterNavigation}
           <nav id="page-footer-nav">
             {block:IfShowSearchNavigation}
