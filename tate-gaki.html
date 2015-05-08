@@ -38,12 +38,42 @@
     <meta name="if:Show Search Navigation" content="1"/>
     <meta name="if:Show Following" content="0"/>
     <meta name="if:Show Likes" content="0"/>
+    <meta name="if:Use Hui Font Fixed Pitch"        content="0"/>
+    <meta name="if:Use Hui Font Proportional Pitch" content="0"/>
+    <meta name="if:Use Noto Sans Japanese"          content="0"/>
+    <meta name="if:Use Well Known Japanese Fonts"   content="0"/>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
     <link rel="shortcut icon" href="{Favicon}"/>
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
     <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}"/>
-    {block:Japanese}<link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"/>{/block:Japanese}
+    {block:IfUseNotoSansJapanese}
+      <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUseNotoSansJapanese}
     <style>
+      {block:IfUseHuiFontFixedPitch}
+        @font-face{
+          font-family:
+            HuiFont;
+          src:
+            url("http://meta-scheme.jp/software/font/HuiFont29.woff") format("woff");
+          font-weight:
+            normal;
+          font-style:
+            normal;
+        }
+      {/block:IfUseHuiFontFixedPitch}
+      {block:IfUseHuiFontProportionalPitch}
+        @font-face{
+          font-family:
+            HuiFontP;
+          src:
+            url("http://meta-scheme.jp/software/font/HuiFontP29.woff") format("woff");
+          font-weight:
+            normal;
+          font-style:
+            normal;
+        }
+      {/block:IfUseHuiFontProportionalPitch}
       html, body, * {
         writing-mode:
           vertical-rl;
@@ -60,9 +90,18 @@
         direction:
           ltr;
         font-family:
-          {block:Japanese}
-            YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo,Noto Sans Japanese,Times New Roman,
-          {/block:Japanese}
+          {block:IfUseHuiFontFixedPitch}
+            HuiFont,
+          {/block:IfUseHuiFontFixedPitch}
+          {block:IfUseHuiFontProportionalPitch}
+            HuiFontP,
+          {/block:IfUseHuiFontProportionalPitch}
+          {block:IfUseNotoSansJapanese}
+            'Noto Sans Japanese',
+          {/block:IfUseNotoSansJapanese}
+          {block:IfUseWellKnownJapaneseFonts}
+            YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo,
+          {/block:IfUseWellKnownJapaneseFonts}
           {TitleFont}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
         box-sizing:
           border-box;
@@ -172,6 +211,18 @@
         color:
           {TitleColor};
         font-family:
+          {block:IfUseHuiFontFixedPitch}
+            HuiFont,
+          {/block:IfUseHuiFontFixedPitch}
+          {block:IfUseHuiFontProportionalPitch}
+            HuiFontP,
+          {/block:IfUseHuiFontProportionalPitch}
+          {block:IfUseNotoSansJapanese}
+            'Noto Sans Japanese',
+          {/block:IfUseNotoSansJapanese}
+          {block:IfUseWellKnownJapaneseFonts}
+            YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo,
+          {/block:IfUseWellKnownJapaneseFonts}
           {TitleFont};
         font-weight:
           {TitleFontWeight};
