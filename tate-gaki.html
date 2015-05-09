@@ -40,8 +40,8 @@
     <meta name="if:Show Likes" content="0"/>
     <meta name="if:Use Hui Font Fixed Pitch"        content="0"/>
     <meta name="if:Use Hui Font Proportional Pitch" content="0"/>
-    <meta name="if:Use Noto Sans Japanese"          content="0"/>
     <meta name="if:Use Well Known Japanese Fonts"   content="0"/>
+    <meta name="if:Use Noto Sans Japanese"          content="0"/>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
     <link rel="shortcut icon" href="{Favicon}"/>
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
@@ -96,12 +96,12 @@
           {block:IfUseHuiFontProportionalPitch}
             HuiFontP,
           {/block:IfUseHuiFontProportionalPitch}
-          {block:IfUseNotoSansJapanese}
-            'Noto Sans Japanese',
-          {/block:IfUseNotoSansJapanese}
           {block:IfUseWellKnownJapaneseFonts}
             YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo,
           {/block:IfUseWellKnownJapaneseFonts}
+          {block:IfUseNotoSansJapanese}
+            'Noto Sans Japanese',
+          {/block:IfUseNotoSansJapanese}
           {TitleFont}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
         box-sizing:
           border-box;
@@ -217,12 +217,12 @@
           {block:IfUseHuiFontProportionalPitch}
             HuiFontP,
           {/block:IfUseHuiFontProportionalPitch}
-          {block:IfUseNotoSansJapanese}
-            'Noto Sans Japanese',
-          {/block:IfUseNotoSansJapanese}
           {block:IfUseWellKnownJapaneseFonts}
             YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo,
           {/block:IfUseWellKnownJapaneseFonts}
+          {block:IfUseNotoSansJapanese}
+            'Noto Sans Japanese',
+          {/block:IfUseNotoSansJapanese}
           {TitleFont};
         font-weight:
           {TitleFontWeight};
@@ -389,6 +389,8 @@
           100%;
         max-height:
           100%;
+      }
+      article.post > iframe.twitter-tweet.twitter-tweet-rendered {
       }
       img.photo-content {
         max-width:
