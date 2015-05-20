@@ -38,6 +38,11 @@
     <meta name="if:Show Search Navigation" content="1"/>
     <meta name="if:Show Following" content="0"/>
     <meta name="if:Show Likes" content="0"/>
+    <meta name="if:Show Powered By Tumblr" content="1"/>
+    <meta name="if:Show Install This Theme" content="1"/>
+    <meta name="if:Show 250px Photo" content="1"/>
+    <meta name="if:Show 400px Photo" content="0"/>
+    <meta name="if:Show 500px Photo" content="0"/>
     <meta name="if:Use Hui Font Fixed Pitch"        content="0"/>
     <meta name="if:Use Hui Font Proportional Pitch" content="0"/>
     <meta name="if:Use Well Known Japanese Fonts"   content="0"/>
@@ -398,6 +403,12 @@
         max-height:
           100%;
       }
+      article.post.text img {
+        max-height:
+          100%;
+        width:
+          auto;
+      }
       span.inline-block {
         display:
           inline-block;
@@ -682,9 +693,21 @@
             {/block:Text}
 
             {block:Photo}
-              {LinkOpenTag}
-                <img class="photo-content" src="{PhotoURL-250}" alt="{PhotoAlt}"/>
-              {LinkCloseTag}
+              {block:IfShow250pxPhoto}
+                {LinkOpenTag}
+                  <img class="photo-content" src="{PhotoURL-250}" alt="{PhotoAlt}"/>
+                {LinkCloseTag}
+              {/block:IfShow250pxPhoto}
+              {block:IfShow400pxPhoto}
+                {LinkOpenTag}
+                  <img class="photo-content" src="{PhotoURL-400}" alt="{PhotoAlt}"/>
+                {LinkCloseTag}
+              {/block:IfShow400pxPhoto}
+              {block:IfShow500pxPhoto}
+                {LinkOpenTag}
+                  <img class="photo-content" src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                {LinkCloseTag}
+              {/block:IfShow500pxPhoto}
               {block:Caption}
                 <div class="caption">{Caption}</div>
               {/block:Caption}
@@ -711,9 +734,21 @@
 
             {block:Photoset}
               {block:Photos}
-                {LinkOpenTag}
-                  <img class="photo-content" src="{PhotoURL-250}" alt="{PhotoAlt}"/>
-                {LinkCloseTag}
+                {block:IfShow250pxPhoto}
+                  {LinkOpenTag}
+                    <img class="photo-content" src="{PhotoURL-250}" alt="{PhotoAlt}"/>
+                  {LinkCloseTag}
+                {/block:IfShow250pxPhoto}
+                {block:IfShow400pxPhoto}
+                  {LinkOpenTag}
+                    <img class="photo-content" src="{PhotoURL-400}" alt="{PhotoAlt}"/>
+                  {LinkCloseTag}
+                {/block:IfShow400pxPhoto}
+                {block:IfShow500pxPhoto}
+                  {LinkOpenTag}
+                    <img class="photo-content" src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                  {LinkCloseTag}
+                {/block:IfShow500pxPhoto}
                 {block:Caption}
                   <div class="caption">{Caption}</div>
                 {/block:Caption}
@@ -1034,8 +1069,12 @@
         {/block:GroupMembers}
 
         <div class="colophon">
-          <span class="powered-by-tumblr">{lang:Powered by Tumblr 2}</span>
-          <span class="install-this-theme"><a href="http://www.tumblr.com/theme/39763">{lang:Install this theme}</a></span>
+          {block:IfShowPoweredByTumblr}
+            <span class="powered-by-tumblr">{lang:Powered by Tumblr 2}</span>
+          {/block:IfShowPoweredByTumblr}
+          {block:IfShowInstallThisTheme}
+            <span class="install-this-theme"><a href="http://www.tumblr.com/theme/39763">{lang:Install this theme}</a></span>
+          {/block:IfShowInstallThisTheme}
         </div>
       </footer>
     </section>
