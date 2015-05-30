@@ -40,6 +40,12 @@
     <meta name="if:Show Likes" content="0"/>
     <meta name="if:Show Powered By Tumblr" content="1"/>
     <meta name="if:Show Install This Theme" content="1"/>
+    <meta name="if:Show View High Resolution in Index Page"        content="1"/>
+    <meta name="if:Show View High Resolution in Permalink Page"    content="1"/>
+    <meta name="if:Show Exif Information in Index Page"            content="1"/>
+    <meta name="if:Show Exif Information in Permalink Page"        content="1"/>
+    <meta name="if:Show Audio Track Information in Index Page"     content="1"/>
+    <meta name="if:Show Audio Track Information in Permalink Page" content="1"/>
     <meta name="if:Show 250px Photo" content="1"/>
     <meta name="if:Show 400px Photo" content="0"/>
     <meta name="if:Show 500px Photo" content="0"/>
@@ -712,23 +718,54 @@
                 <div class="caption">{Caption}</div>
               {/block:Caption}
               {block:HighRes}
-                 <div><a href="{PhotoURL-HighRes}">{lang:View high resolution}</a></div>
+                {block:IndexPage}
+                  {block:IfShowViewHighResolutionInIndexPage}
+                    <div><a href="{PhotoURL-HighRes}">{lang:View high resolution}</a></div>
+                  {/block:IfShowViewHighResolutionInIndexPage}
+                {/block:IndexPage}
+                {block:PermalinkPage}
+                  {block:IfShowViewHighResolutionInPermalinkPage}
+                    <div><a href="{PhotoURL-HighRes}">{lang:View high resolution}</a></div>
+                  {/block:IfShowViewHighResolutionInPermalinkPage}
+                {/block:PermalinkPage}
               {/block:HighRes}
               {block:Exif}
-                <ul>
-                {block:Camera}
-                  <li>Camera: {Camera}</li>
-                {/block:Camera}
-                {block:Aperture}
-                  <li>Aperture: {Aperture}</li>
-                {/block:Aperture}
-                {block:Exposure}
-                  <li>Exposure: {Exposure}</li>
-                {/block:Exposure}
-                {block:FocalLength}
-                  <li>Focal Length: {FocalLength}</li>
-                {/block:FocalLength}
-                </ul>
+                {block:IndexPage}
+                  {block:IfShowExifInformationInIndexPage}
+                    <ul>
+                    {block:Camera}
+                      <li>Camera: {Camera}</li>
+                    {/block:Camera}
+                    {block:Aperture}
+                      <li>Aperture: {Aperture}</li>
+                    {/block:Aperture}
+                    {block:Exposure}
+                      <li>Exposure: {Exposure}</li>
+                    {/block:Exposure}
+                    {block:FocalLength}
+                      <li>Focal Length: {FocalLength}</li>
+                    {/block:FocalLength}
+                    </ul>
+                  {/block:IfShowExifInformationInIndexPage}
+                {/block:IndexPage}
+                {block:PermalinkPage}
+                  {block:IfShowExifInformationInPermalinkPage}
+                    <ul>
+                    {block:Camera}
+                      <li>Camera: {Camera}</li>
+                    {/block:Camera}
+                    {block:Aperture}
+                      <li>Aperture: {Aperture}</li>
+                    {/block:Aperture}
+                    {block:Exposure}
+                      <li>Exposure: {Exposure}</li>
+                    {/block:Exposure}
+                    {block:FocalLength}
+                      <li>Focal Length: {FocalLength}</li>
+                    {/block:FocalLength}
+                    </ul>
+                  {/block:IfShowExifInformationInPermalinkPage}
+                {/block:PermalinkPage}
               {/block:Exif}
             {/block:Photo}
 
@@ -753,23 +790,54 @@
                   <div class="caption">{Caption}</div>
                 {/block:Caption}
                 {block:HighRes}
-                   <div><a href="{PhotoURL-HighRes}">{lang:View high resolution}</a></div>
+                  {block:IndexPage}
+                    {block:IfShowViewHighResolutionInIndexPage}
+                      <div><a href="{PhotoURL-HighRes}">{lang:View high resolution}</a></div>
+                    {/block:IfShowViewHighResolutionInIndexPage}
+                  {/block:IndexPage}
+                  {block:PermalinkPage}
+                    {block:IfShowViewHighResolutionInPermalinkPage}
+                      <div><a href="{PhotoURL-HighRes}">{lang:View high resolution}</a></div>
+                    {/block:IfShowViewHighResolutionInPermalinkPage}
+                  {/block:PermalinkPage}
                 {/block:HighRes}
                 {block:Exif}
-                  <ul>
-                  {block:Camera}
-                    <li>Camera: {Camera}</li>
-                  {/block:Camera}
-                  {block:Aperture}
-                    <li>Aperture: {Aperture}</li>
-                  {/block:Aperture}
-                  {block:Exposure}
-                    <li>Exposure: {Exposure}</li>
-                  {/block:Exposure}
-                  {block:FocalLength}
-                    <li>Focal Length: {FocalLength}</li>
-                  {/block:FocalLength}
-                  </ul>
+                  {block:IndexPage}
+                    {block:IfShowExifInformationInIndexPage}
+                      <ul>
+                      {block:Camera}
+                        <li>Camera: {Camera}</li>
+                      {/block:Camera}
+                      {block:Aperture}
+                        <li>Aperture: {Aperture}</li>
+                      {/block:Aperture}
+                      {block:Exposure}
+                        <li>Exposure: {Exposure}</li>
+                      {/block:Exposure}
+                      {block:FocalLength}
+                        <li>Focal Length: {FocalLength}</li>
+                      {/block:FocalLength}
+                      </ul>
+                    {/block:IfShowExifInformationInIndexPage}
+                  {/block:IndexPage}
+                  {block:PermalinkPage}
+                    {block:IfShowExifInformationInPermalinkPage}
+                      <ul>
+                      {block:Camera}
+                        <li>Camera: {Camera}</li>
+                      {/block:Camera}
+                      {block:Aperture}
+                        <li>Aperture: {Aperture}</li>
+                      {/block:Aperture}
+                      {block:Exposure}
+                        <li>Exposure: {Exposure}</li>
+                      {/block:Exposure}
+                      {block:FocalLength}
+                        <li>Focal Length: {FocalLength}</li>
+                      {/block:FocalLength}
+                      </ul>
+                    {/block:IfShowExifInformationInPermalinkPage}
+                  {/block:PermalinkPage}
                 {/block:Exif}
               {/block:Photos}
 
@@ -853,10 +921,22 @@
                 <div class="caption">{Caption}</div>
               {/block:Caption}
 
-              {block:TrackName}Track Name: {TrackName}<br/>{/block:TrackName}
-              {block:Artist}Artist: {Artist}<br/>{/block:Artist}
-              {block:Album}Album: {Album}<br/>{/block:Album}
-              {block:ExternalAudio}<a href="{ExternalAudioURL}">{lang:Download this track}</a><br/>{/block:ExternalAudio}
+              {block:IndexPage}
+                {block:IfShowAudioTrackInformationInIndexPage}
+                  {block:TrackName}Track Name: {TrackName}<br/>{/block:TrackName}
+                  {block:Artist}Artist: {Artist}<br/>{/block:Artist}
+                  {block:Album}Album: {Album}<br/>{/block:Album}
+                  {block:ExternalAudio}<a href="{ExternalAudioURL}">{lang:Download this track}</a><br/>{/block:ExternalAudio}
+                {/block:IfShowAudioTrackInformationInIndexPage}
+              {/block:IndexPage}
+              {block:PermalinkPage}
+                {block:IfShowAudioTrackInformationInPermalinkPage}
+                  {block:TrackName}Track Name: {TrackName}<br/>{/block:TrackName}
+                  {block:Artist}Artist: {Artist}<br/>{/block:Artist}
+                  {block:Album}Album: {Album}<br/>{/block:Album}
+                  {block:ExternalAudio}<a href="{ExternalAudioURL}">{lang:Download this track}</a><br/>{/block:ExternalAudio}
+                {/block:IfShowAudioTrackInformationInPermalinkPage}
+              {/block:PermalinkPage}
             {/block:Audio}
 
             {block:Answer}
