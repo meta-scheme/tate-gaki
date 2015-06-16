@@ -40,10 +40,16 @@
     <meta name="if:Show Likes" content="0"/>
     <meta name="if:Show Powered By Tumblr" content="1"/>
     <meta name="if:Show Install This Theme" content="1"/>
+    <meta name="if:Show Photo Caption in Index Page"               content="1"/>
+    <meta name="if:Show Photo Caption in Permalink Page"           content="1"/>
     <meta name="if:Show View High Resolution in Index Page"        content="1"/>
     <meta name="if:Show View High Resolution in Permalink Page"    content="1"/>
     <meta name="if:Show Exif Information in Index Page"            content="1"/>
     <meta name="if:Show Exif Information in Permalink Page"        content="1"/>
+    <meta name="if:Show Video Caption in Index Page"               content="1"/>
+    <meta name="if:Show Video Caption in Permalink Page"           content="1"/>
+    <meta name="if:Show Audio Caption in Index Page"               content="1"/>
+    <meta name="if:Show Audio Caption in Permalink Page"           content="1"/>
     <meta name="if:Show Audio Track Information in Index Page"     content="1"/>
     <meta name="if:Show Audio Track Information in Permalink Page" content="1"/>
     <meta name="select:Lang Attribute of HTML Element" content=''                title="None"                     />
@@ -193,9 +199,9 @@
     <meta name="select:Lang Attribute of HTML Element" content=' lang="yi"'      title="Yiddish"                  />
     <meta name="select:Lang Attribute of HTML Element" content=' lang="yo"'      title="Yoruba"                   />
     <meta name="select:Lang Attribute of HTML Element" content=' lang="zu"'      title="Zulu"                     />
-    <meta name="if:Show 250px Photo" content="1"/>
-    <meta name="if:Show 400px Photo" content="0"/>
-    <meta name="if:Show 500px Photo" content="0"/>
+    <meta name="font:Basic Font for Title"    content="{TitleFont}"/>
+    <meta name="font:Basic Font for Contents" content="{TitleFont}"/>
+    <meta name="if:Use Font Awesome"                                 content="0"/>
     <meta name="if:Use Hui Font Fixed Pitch"                         content="0"/>
     <meta name="if:Use Hui Font Proportional Pitch"                  content="0"/>
     <meta name="if:Use Makiba Font Fixed Pitch Normal Weight"        content="0"/>
@@ -204,25 +210,110 @@
     <meta name="if:Use Makiba Font Proportional Pitch Bold Weight"   content="0"/>
     <meta name="if:Use Ohisama Font Fixed Pitch Normal Weight"       content="0"/>
     <meta name="if:Use Ohisama Font Fixed Pitch Bold Weight"         content="0"/>
-    <meta name="if:Use cwTeXHei"                                     content="0"/>
-    <meta name="if:Use cwTeXMing"                                    content="0"/>
-    <meta name="if:Use Well Known Japanese Fonts"                    content="0"/>
-    <meta name="if:Use Noto Sans Japanese"                           content="0"/>
     <meta name="if:Use Armed Banana"                                 content="0"/>
+    <meta name="if:Use Kouzan Mouhitsu Font Gyousho"                 content="0"/>
     <meta name="if:Use IPAex Gothic"                                 content="0"/>
     <meta name="if:Use IPAex Minchou"                                content="0"/>
-    <meta name="if:Use Kouzan Mouhitsu Font Gyousho"                 content="0"/>
-    <meta name="if:Use Font Awesome"                                 content="0"/>
+    <meta name="if:Use Noto Sans Japanese"                           content="0"/>
+    <meta name="if:Use Well Known Japanese Fonts"                    content="0"/>
+    <meta name="if:Use Hanna"                                        content="0"/>
+    <meta name="if:Use Jeju Gothic"                                  content="0"/>
+    <meta name="if:Use Jeju Hallasan"                                content="0"/>
+    <meta name="if:Use Jeju Myeongjo"                                content="0"/>
+    <meta name="if:Use KoPub Batang"                                 content="0"/>
+    <meta name="if:Use Nanum Brush Script"                           content="0"/>
+    <meta name="if:Use Nanum Gothic"                                 content="0"/>
+    <meta name="if:Use Nanum Gothic Coding"                          content="0"/>
+    <meta name="if:Use Nanum Myeongjo"                               content="0"/>
+    <meta name="if:Use Nanum Pen Script"                             content="0"/>
+    <meta name="if:Use cwTeXFangSong"                                content="0"/>
+    <meta name="if:Use cwTeXHei"                                     content="0"/>
+    <meta name="if:Use cwTeXKai"                                     content="0"/>
+    <meta name="if:Use cwTeXMing"                                    content="0"/>
+    <meta name="if:Use cwTeXYen"                                     content="0"/>
+    <meta name="select:Top Priority Font for Title"    content=""                                                title="Basic Font"                                             />
+    <meta name="select:Top Priority Font for Title"    content="HuiFont,"                                        title="Hui Font Fixed Pitch (Japanese)"                        />
+    <meta name="select:Top Priority Font for Title"    content="HuiFontP,"                                       title="Hui Font Proportional Pitch (Japanese)"                 />
+    <meta name="select:Top Priority Font for Title"    content="MakibaFont,"                                     title="Makiba Font Fixed Pitch Normal Weight (Japanese)"       />
+    <meta name="select:Top Priority Font for Title"    content="MakibaFontB,"                                    title="Makiba Font Fixed Pitch Bold Weight (Japanese)"         />
+    <meta name="select:Top Priority Font for Title"    content="MakibaFontP,"                                    title="Makiba Font Proportional Pitch Normal Weight (Japanese)"/>
+    <meta name="select:Top Priority Font for Title"    content="MakibaFontBP,"                                   title="Makiba Font Proportional Pitch Bold Weight (Japanese)"  />
+    <meta name="select:Top Priority Font for Title"    content="OhisamaFont,"                                    title="Ohisama Font Fixed Pitch Normal Weight (Japanese)"      />
+    <meta name="select:Top Priority Font for Title"    content="OhisamaFontB,"                                   title="Ohisama Font Fixed Pitch Bold Weight (Japanese)"        />
+    <meta name="select:Top Priority Font for Title"    content="ArmedBanana,"                                    title="Armed Banana (Japanese)"                                />
+    <meta name="select:Top Priority Font for Title"    content="KouzanMouhitsuFontGyousho,"                      title="Kouzan Mouhitsu Font Gyousho (Japanese)"                />
+    <meta name="select:Top Priority Font for Title"    content="IPAexG,"                                         title="IPAex Gothic (Japanese)"                                />
+    <meta name="select:Top Priority Font for Title"    content="IPAexM,"                                         title="IPAex Minchou (Japanese)"                               />
+    <meta name="select:Top Priority Font for Title"    content="'Noto Sans Japanese',"                           title="Noto Sans Japanese"                                     />
+    <meta name="select:Top Priority Font for Title"    content="YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo," title="Well Known Japanese Fonts"                              />
+    <meta name="select:Top Priority Font for Title"    content="Hanna,"                                          title="Hanna (Korean)"                                         />
+    <meta name="select:Top Priority Font for Title"    content="'Jeju Gothic',"                                  title="Jeju Gothic (Korean)"                                   />
+    <meta name="select:Top Priority Font for Title"    content="'Jeju Hallasan',"                                title="Jeju Hallasan (Korean)"                                 />
+    <meta name="select:Top Priority Font for Title"    content="'Jeju Myeongjo',"                                title="Jeju Myeongjo (Korean)"                                 />
+    <meta name="select:Top Priority Font for Title"    content="'KoPub Batang',"                                 title="KoPub Batang (Korean)"                                  />
+    <meta name="select:Top Priority Font for Title"    content="'Nanum Brush Script',"                           title="Nanum Brush Script (Korean)"                            />
+    <meta name="select:Top Priority Font for Title"    content="'Nanum Gothic',"                                 title="Nanum Gothic (Korean)"                                  />
+    <meta name="select:Top Priority Font for Title"    content="'Nanum Gothic Coding',"                          title="Nanum Gothic Coding (Korean)"                           />
+    <meta name="select:Top Priority Font for Title"    content="'Nanum Myeongjo',"                               title="Nanum Myeongjo (Korean)"                                />
+    <meta name="select:Top Priority Font for Title"    content="'Nanum Pen Script',"                             title="Nanum Pen Script (Korean)"                              />
+    <meta name="select:Top Priority Font for Title"    content="'cwTeXFangSong',"                                title="cwTeXFangSong (Chinese_traditional)"                    />
+    <meta name="select:Top Priority Font for Title"    content="'cwTeXHei',"                                     title="cwTeXHei (Chinese_traditional)"                         />
+    <meta name="select:Top Priority Font for Title"    content="'cwTeXKai',"                                     title="cwTeXKai (Chinese_traditional)"                         />
+    <meta name="select:Top Priority Font for Title"    content="'cwTeXMing',"                                    title="cwTeXMing (Chinese_traditional)"                        />
+    <meta name="select:Top Priority Font for Title"    content="'cwTeXYen',"                                     title="cwTeXYen (Chinese_traditional)"                         />
+    <meta name="select:Top Priority Font for Contents" content=""                                                title="Basic Font"                                             />
+    <meta name="select:Top Priority Font for Contents" content="HuiFont,"                                        title="Hui Font Fixed Pitch (Japanese)"                        />
+    <meta name="select:Top Priority Font for Contents" content="HuiFontP,"                                       title="Hui Font Proportional Pitch (Japanese)"                 />
+    <meta name="select:Top Priority Font for Contents" content="MakibaFont,"                                     title="Makiba Font Fixed Pitch Normal Weight (Japanese)"       />
+    <meta name="select:Top Priority Font for Contents" content="MakibaFontB,"                                    title="Makiba Font Fixed Pitch Bold Weight (Japanese)"         />
+    <meta name="select:Top Priority Font for Contents" content="MakibaFontP,"                                    title="Makiba Font Proportional Pitch Normal Weight (Japanese)"/>
+    <meta name="select:Top Priority Font for Contents" content="MakibaFontBP,"                                   title="Makiba Font Proportional Pitch Bold Weight (Japanese)"  />
+    <meta name="select:Top Priority Font for Contents" content="OhisamaFont,"                                    title="Ohisama Font Fixed Pitch Normal Weight (Japanese)"      />
+    <meta name="select:Top Priority Font for Contents" content="OhisamaFontB,"                                   title="Ohisama Font Fixed Pitch Bold Weight (Japanese)"        />
+    <meta name="select:Top Priority Font for Contents" content="ArmedBanana,"                                    title="Armed Banana (Japanese)"                                />
+    <meta name="select:Top Priority Font for Contents" content="KouzanMouhitsuFontGyousho,"                      title="Kouzan Mouhitsu Font Gyousho (Japanese)"                />
+    <meta name="select:Top Priority Font for Contents" content="IPAexG,"                                         title="IPAex Gothic (Japanese)"                                />
+    <meta name="select:Top Priority Font for Contents" content="IPAexM,"                                         title="IPAex Minchou (Japanese)"                               />
+    <meta name="select:Top Priority Font for Contents" content="'Noto Sans Japanese',"                           title="Noto Sans Japanese"                                     />
+    <meta name="select:Top Priority Font for Contents" content="YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo," title="Well Known Japanese Fonts"                              />
+    <meta name="select:Top Priority Font for Contents" content="Hanna,"                                          title="Hanna (Korean)"                                         />
+    <meta name="select:Top Priority Font for Contents" content="'Jeju Gothic',"                                  title="Jeju Gothic (Korean)"                                   />
+    <meta name="select:Top Priority Font for Contents" content="'Jeju Hallasan',"                                title="Jeju Hallasan (Korean)"                                 />
+    <meta name="select:Top Priority Font for Contents" content="'Jeju Myeongjo',"                                title="Jeju Myeongjo (Korean)"                                 />
+    <meta name="select:Top Priority Font for Contents" content="'KoPub Batang',"                                 title="KoPub Batang (Korean)"                                  />
+    <meta name="select:Top Priority Font for Contents" content="'Nanum Brush Script',"                           title="Nanum Brush Script (Korean)"                            />
+    <meta name="select:Top Priority Font for Contents" content="'Nanum Gothic',"                                 title="Nanum Gothic (Korean)"                                  />
+    <meta name="select:Top Priority Font for Contents" content="'Nanum Gothic Coding',"                          title="Nanum Gothic Coding (Korean)"                           />
+    <meta name="select:Top Priority Font for Contents" content="'Nanum Myeongjo',"                               title="Nanum Myeongjo (Korean)"                                />
+    <meta name="select:Top Priority Font for Contents" content="'Nanum Pen Script',"                             title="Nanum Pen Script (Korean)"                              />
+    <meta name="select:Top Priority Font for Contents" content="'cwTeXFangSong',"                                title="cwTeXFangSong (Chinese_traditional)"                    />
+    <meta name="select:Top Priority Font for Contents" content="'cwTeXHei',"                                     title="cwTeXHei (Chinese_traditional)"                         />
+    <meta name="select:Top Priority Font for Contents" content="'cwTeXKai',"                                     title="cwTeXKai (Chinese_traditional)"                         />
+    <meta name="select:Top Priority Font for Contents" content="'cwTeXMing',"                                    title="cwTeXMing (Chinese_traditional)"                        />
+    <meta name="select:Top Priority Font for Contents" content="'cwTeXYen',"                                     title="cwTeXYen (Chinese_traditional)"                         />
+    <meta name="select:Font Weight for Title"    content="{TitleFontWeight}" title="Default"/>
+    <meta name="select:Font Weight for Title"    content="normal"            title="Normal" />
+    <meta name="select:Font Weight for Title"    content="bold"              tilte="Bold"   />
+    <meta name="select:Font Weight for Title"    content="lighter"           title="Lighter"/>
+    <meta name="select:Font Weight for Title"    content="bolder"            title="Bolder" />
+    <meta name="select:Font Weight for Contents" content="normal "           title="Default"/>
+    <meta name="select:Font Weight for Contents" content="normal"            title="Normal" />
+    <meta name="select:Font Weight for Contents" content="bold"              tilte="Bold"   />
+    <meta name="select:Font Weight for Contents" content="lighter"           title="Lighter"/>
+    <meta name="select:Font Weight for Contents" content="bolder"            title="Bolder" />
+    <meta name="if:Show 250px Photo" content="1"/>
+    <meta name="if:Show 400px Photo" content="0"/>
+    <meta name="if:Show 500px Photo" content="0"/>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
     <link rel="shortcut icon" href="{Favicon}"/>
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
     <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}"/>
-    {block:IfUseNotoSansJapanese}
-      <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"/>
-    {/block:IfUseNotoSansJapanese}
     {block:IfUseFontAwesome}
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     {/block:IfUseFontAwesome}
+    {block:IfUseNotoSansJapanese}
+      <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUseNotoSansJapanese}
     <style>
       {block:IfUseHuiFontFixedPitch}
         @font-face{
@@ -320,12 +411,6 @@
             normal;
         }
       {/block:IfUseOhisamaFontFixedPitchBoldWeight}
-      {block:IfUsecwTeXHei}
-        @import url(http://fonts.googleapis.com/earlyaccess/cwtexhei.css);
-      {/block:IfUsecwTeXHei}
-      {block:IfUsecwTeXMing}
-        @import url(http://fonts.googleapis.com/earlyaccess/cwtexming.css);
-      {/block:IfUsecwTeXMing}
       {block:IfUseArmedBanana}
         @font-face{
           font-family:
@@ -338,6 +423,18 @@
             normal;
         }
       {/block:IfUseArmedBanana}
+      {block:IfUseKouzanMouhitsuFontGyousho}
+        @font-face{
+          font-family:
+            KouzanMouhitsuFontGyousho;
+          src:
+            url("http://meta-scheme.jp/software/font/KouzanMouhitsuFontGyousho.woff") format("woff");
+          font-weight:
+            normal;
+          font-style:
+            normal;
+        }
+      {/block:IfUseKouzanMouhitsuFontGyousho}
       {block:IfUseIPAexGothic}
         @font-face{
           font-family:
@@ -362,18 +459,51 @@
             normal;
         }
       {/block:IfUseIPAexMinchou}
-      {block:IfUseKouzanMouhitsuFontGyousho}
-        @font-face{
-          font-family:
-            KouzanMouhitsuFontGyousho;
-          src:
-            url("http://meta-scheme.jp/software/font/KouzanMouhitsuFontGyousho.woff") format("woff");
-          font-weight:
-            normal;
-          font-style:
-            normal;
-        }
-      {/block:IfUseKouzanMouhitsuFontGyousho}
+      {block:IfUseHanna}
+        @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+      {/block:IfUseHanna}
+      {block:IfUseJejuHallasan}
+        @import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+      {/block:IfUseJejuHallasan}
+      {block:IfUseJejuGothic}
+        @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+      {/block:IfUseJejuGothic}
+      {block:IfUseJejuMyeongjo}
+        @import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+      {/block:IfUseJejuMyeongjo}
+      {block:IfUseKoPubBatang}
+        @import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+      {/block:IfUseKoPubBatang}
+      {block:IfUseNanumBrushScript}
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+      {/block:IfUseNanumBrushScript}
+      {block:IfUseNanumGothic}
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+      {/block:IfUseNanumGothic}
+      {block:IfUseNanumGothicCoding}
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+      {/block:IfUseNanumGothicCoding}
+      {block:IfUseNanumMyeongjo}
+        @import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+      {/block:IfUseNanumMyeongjo}
+      {block:IfUseNanumPenScript}
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+      {/block:IfUseNanumPenScript}
+      {block:IfUsecwTeXFangSong}
+        @import url(http://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+      {/block:IfUsecwTeXFangSong}
+      {block:IfUsecwTeXHei}
+        @import url(http://fonts.googleapis.com/earlyaccess/cwtexhei.css);
+      {/block:IfUsecwTeXHei}
+      {block:IfUsecwTeXKai}
+        @import url(http://fonts.googleapis.com/earlyaccess/cwtexkai.css);
+      {/block:IfUsecwTeXKai}
+      {block:IfUsecwTeXMing}
+        @import url(http://fonts.googleapis.com/earlyaccess/cwtexming.css);
+      {/block:IfUsecwTeXMing}
+      {block:IfUsecwTeXYen}
+        @import url(http://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+      {/block:IfUsecwTeXYen}
       html, body, * {
         writing-mode:
           vertical-rl;
@@ -390,55 +520,9 @@
         direction:
           ltr;
         font-family:
-          {block:IfUseHuiFontFixedPitch}
-            HuiFont,
-          {/block:IfUseHuiFontFixedPitch}
-          {block:IfUseHuiFontProportionalPitch}
-            HuiFontP,
-          {/block:IfUseHuiFontProportionalPitch}
-          {block:IfUseMakibaFontFixedPitchNormalWeight}
-            MakibaFont,
-          {/block:IfUseMakibaFontFixedPitchNormalWeight}
-          {block:IfUseMakibaFontFixedPitchBoldWeight}
-            MakibaFontB,
-          {/block:IfUseMakibaFontFixedPitchBoldWeight}
-          {block:IfUseMakibaFontProportionalPitchNormalWeight}
-            MakibaFontP,
-          {/block:IfUseMakibaFontProportionalPitchNormalWeight}
-          {block:IfUseMakibaFontProportionalPitchBoldWeight}
-            MakibaFontBP,
-          {/block:IfUseMakibaFontProportionalPitchBoldWeight}
-          {block:IfUseOhisamaFontFixedPitchNormalWeight}
-            OhisamaFont,
-          {/block:IfUseOhisamaFontFixedPitchNormalWeight}
-          {block:IfUseOhisamaFontFixedPitchBoldWeight}
-            OhisamaFontB,
-          {/block:IfUseOhisamaFontFixedPitchBoldWeight}
-          {block:IfUsecwTeXHei}
-            'cwTeXHei', serif,
-          {/block:IfUsecwTeXHei}
-          {block:IfUsecwTeXMing}
-            'cwTeXMing', serif,
-          {/block:IfUsecwTeXMing}
-          {block:IfUseWellKnownJapaneseFonts}
-            YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo,
-          {/block:IfUseWellKnownJapaneseFonts}
-          {block:IfUseNotoSansJapanese}
-            'Noto Sans Japanese',
-          {/block:IfUseNotoSansJapanese}
-          {block:IfUseArmedBanana}
-            ArmedBanana,
-          {/block:IfUseArmedBanana}
-          {block:IfUseIPAexGothic}
-            IPAexG,
-          {/block:IfUseIPAexGothic}
-          {block:IfUseIPAexMinchou}
-            IPAexM,
-          {/block:IfUseIPAexMinchou}
-          {block:IfUseKouzanMouhitsuFontGyousho}
-            KouzanMouhitsuFontGyousho,
-          {/block:IfUseKouzanMouhitsuFontGyousho}
-          {TitleFont}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+          {select:Top Priority Font for Contents}{font:Basic Font for Contents};
+        font-weight:
+          {select:Font Weight for Contents};
         box-sizing:
           border-box;
       }
@@ -516,6 +600,8 @@
       img.header-image {
         max-height:
           100%;
+        max-width:
+          100%;
       }
       div.header-avatar {
         width:
@@ -543,63 +629,17 @@
         padding:
           0;
       }
+      h1.blog-title, h1.blog-title a {
+        font-family:
+          {select:Top Priority Font for Title}{font:Basic Font for Title};
+        font-weight:
+          {select:Font Weight for Title};
+        font-size:
+          x-large;
+      }
       h1.blog-title {
         color:
           {TitleColor};
-        font-family:
-          {block:IfUseHuiFontFixedPitch}
-            HuiFont,
-          {/block:IfUseHuiFontFixedPitch}
-          {block:IfUseHuiFontProportionalPitch}
-            HuiFontP,
-          {/block:IfUseHuiFontProportionalPitch}
-          {block:IfUseMakibaFontFixedPitchNormalWeight}
-            MakibaFont,
-          {/block:IfUseMakibaFontFixedPitchNormalWeight}
-          {block:IfUseMakibaFontFixedPitchBoldWeight}
-            MakibaFontB,
-          {/block:IfUseMakibaFontFixedPitchBoldWeight}
-          {block:IfUseMakibaFontProportionalPitchNormalWeight}
-            MakibaFontP,
-          {/block:IfUseMakibaFontProportionalPitchNormalWeight}
-          {block:IfUseMakibaFontProportionalPitchBoldWeight}
-            MakibaFontBP,
-          {/block:IfUseMakibaFontProportionalPitchBoldWeight}
-          {block:IfUseOhisamaFontFixedPitchNormalWeight}
-            OhisamaFont,
-          {/block:IfUseOhisamaFontFixedPitchNormalWeight}
-          {block:IfUseOhisamaFontFixedPitchBoldWeight}
-            OhisamaFontB,
-          {/block:IfUseOhisamaFontFixedPitchBoldWeight}
-          {block:IfUsecwTeXHei}
-            'cwTeXHei', serif,
-          {/block:IfUsecwTeXHei}
-          {block:IfUsecwTeXMing}
-            'cwTeXMing', serif,
-          {/block:IfUsecwTeXMing}
-          {block:IfUseWellKnownJapaneseFonts}
-            YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo,
-          {/block:IfUseWellKnownJapaneseFonts}
-          {block:IfUseNotoSansJapanese}
-            'Noto Sans Japanese',
-          {/block:IfUseNotoSansJapanese}
-          {block:IfUseArmedBanana}
-            ArmedBanana,
-          {/block:IfUseArmedBanana}
-          {block:IfUseIPAexGothic}
-            IPAexG,
-          {/block:IfUseIPAexGothic}
-          {block:IfUseIPAexMinchou}
-            IPAexM,
-          {/block:IfUseIPAexMinchou}
-          {block:IfUseKouzanMouhitsuFontGyousho}
-            KouzanMouhitsuFontGyousho,
-          {/block:IfUseKouzanMouhitsuFontGyousho}
-          {TitleFont};
-        font-weight:
-          {TitleFontWeight};
-        font-size:
-          x-large;
         margin:
           0.5rem;
       }
@@ -643,31 +683,16 @@
           font-family: OhisamaFontB !important;
         }
       {/block:IfUseOhisamaFontFixedPitchBoldWeight}
-      {block:IfUsecwTeXHei}
-        .cwTeXHei, .cwTeXHei * {
-          font-family: 'cwTeXHei' !important;
-        }
-      {/block:IfUsecwTeXHei}
-      {block:IfUsecwTeXMing}
-        .cwTeXMing, .cwTeXMing * {
-          font-family: 'cwTeXMing' !important;
-        }
-      {/block:IfUsecwTeXMing}
-      {block:IfUseWellKnownJapaneseFonts}
-        .WellKnownJapaneseFonts, .WellKnownJapaneseFonts * {
-          font-family: YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo !important;
-        }
-      {/block:IfUseWellKnownJapaneseFonts}
-      {block:IfUseNotoSansJapanese}
-        .NotoSansJapanese, .NotoSansJapanese * {
-          font-family: 'Noto Sans Japanese' !important;
-        }
-      {/block:IfUseNotoSansJapanese}
       {block:IfUseArmedBanana}
         .ArmedBanana, .ArmedBanana * {
           font-family: ArmedBanana !important;
         }
       {/block:IfUseArmedBanana}
+      {block:IfUseKouzanMouhitsuFontGyousho}
+        .KouzanMouhitsuFontGyousho, .KouzanMouhitsuFontGyousho * {
+          font-family: KouzanMouhitsuFontGyousho !important;
+        }
+      {/block:IfUseKouzanMouhitsuFontGyousho}
       {block:IfUseIPAexGothic}
         .IPAexG, .IPAexG * {
           font-family: IPAexG !important;
@@ -678,11 +703,91 @@
           font-family: IPAexM !important;
         }
       {/block:IfUseIPAexMinchou}
-      {block:IfUseKouzanMouhitsuFontGyousho}
-        .KouzanMouhitsuFontGyousho, .KouzanMouhitsuFontGyousho * {
-          font-family: KouzanMouhitsuFontGyousho !important;
+      {block:IfUseNotoSansJapanese}
+        .NotoSansJapanese, .NotoSansJapanese * {
+          font-family: 'Noto Sans Japanese' !important;
         }
-      {/block:IfUseKouzanMouhitsuFontGyousho}
+      {/block:IfUseNotoSansJapanese}
+      {block:IfUseWellKnownJapaneseFonts}
+        .WellKnownJapaneseFonts, .WellKnownJapaneseFonts * {
+          font-family: YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo !important;
+        }
+      {/block:IfUseWellKnownJapaneseFonts}
+      {block:IfUseHanna}
+        .Hanna, .Hanna * {
+          font-family: Hanna !important;
+        }
+      {/block:IfUseHanna}
+      {block:IfUseJejuGothic}
+        .JejuGothic, .JejuGothic * {
+          font-family: 'Jeju Gothic' !important;
+        }
+      {/block:IfUseJejuGothic}
+      {block:IfUseJejuHallasan}
+        .JejuHallasan, .JejuHallasan * {
+          font-family: 'Jeju Hallasan' !important;
+        }
+      {/block:IfUseJejuHallasan}
+      {block:IfUseJejuMyeongjo}
+        .JejuMyeongjo, .JejuMyeongjo * {
+          font-family: 'Jeju Myeongjo' !important;
+        }
+      {/block:IfUseJejuMyeongjo}
+      {block:IfUseKoPubBatang}
+        .KoPubBatang, .KoPubBatang * {
+          font-family: 'KoPub Batang' !important;
+        }
+      {/block:IfUseKoPubBatang}
+      {block:IfUseNanumBrushScript}
+        .NanumBrushScript, .NanumBrushScript * {
+          font-family: 'Nanum Brush Script' !important;
+        }
+      {/block:IfUseNanumBrushScript}
+      {block:IfUseNanumGothic}
+        .NanumGothic, .NanumGothic * {
+          font-family: 'Nanum Gothic' !important;
+        }
+      {/block:IfUseNanumGothic}
+      {block:IfUseNanumGothicCoding}
+        .NanumGothicCoding, .NanumGothicCoding * {
+          font-family: 'Nanum Gothic Coding' !important;
+        }
+      {/block:IfUseNanumGothicCoding}
+      {block:IfUseNanumMyeongjo}
+        .NanumMyeongjo, .NanumMyeongjo * {
+          font-family: 'Nanum Myeongjo' !important;
+        }
+      {/block:IfUseNanumMyeongjo}
+      {block:IfUseNanumPenScript}
+        .NanumPenScript, .NanumPenScript * {
+          font-family: 'Nanum Pen Script' !important;
+        }
+      {/block:IfUseNanumPenScript}
+      {block:IfUsecwTeXFangSong}
+        .cwTeXFangSong, .cwTeXFangSong * {
+          font-family: 'cwTeXFangSong' !important;
+        }
+      {/block:IfUsecwTeXFangSong}
+      {block:IfUsecwTeXHei}
+        .cwTeXHei, .cwTeXHei * {
+          font-family: 'cwTeXHei' !important;
+        }
+      {/block:IfUsecwTeXHei}
+      {block:IfUsecwTeXKai}
+        .cwTeXKai, .cwTeXKai * {
+          font-family: 'cwTeXKai' !important;
+        }
+      {/block:IfUsecwTeXKai}
+      {block:IfUsecwTeXMing}
+        .cwTeXMing, .cwTeXMing * {
+          font-family: 'cwTeXMing' !important;
+        }
+      {/block:IfUsecwTeXMing}
+      {block:IfUsecwTeXYen}
+        .cwTeXYen, .cwTeXYen * {
+          font-family: 'cwTeXYen' !important;
+        }
+      {/block:IfUsecwTeXYen}
       p.description {
         font-size:
           medium;
@@ -822,9 +927,9 @@
           left;
       }
       div.embed-wrapper, div.tumblr_video_container {
-        max-width:
-          100%;
         max-height:
+          100%;
+        max-width:
           100%;
         text-align:
           left;
@@ -837,17 +942,17 @@
       div.embed-wrapper   iframe.tumblr_audio_player,
       div.embed-wrapper   iframe.tumblr_video_iframe,
       div.embed-wrapper > iframe {
-        max-width:
-          100%;
         max-height:
+          100%;
+        max-width:
           100%;
       }
       article.post > iframe.twitter-tweet.twitter-tweet-rendered {
       }
-      img.photo-content {
-        max-width:
-          100%;
+      img.photo-content, img.album-art {
         max-height:
+          100%;
+        max-width:
           100%;
       }
       article.post.text img {
@@ -917,10 +1022,10 @@
           auto;
       }
       li.like_post img {
-        max-width:
-          100%;
         max-height:
           100%;
+        width:
+          auto;
       }
       li.like_post blockquote {
         margin:
@@ -961,10 +1066,10 @@
           left;
       }
       img.link-thumbnail {
-        max-width:
-          100%;
         max-height:
           100%;
+        width:
+          auto;
         text-align:
           center;
       }
@@ -1158,7 +1263,16 @@
                 {LinkCloseTag}
               {/block:IfShow500pxPhoto}
               {block:Caption}
-                <div class="caption">{Caption}</div>
+                {block:IndexPage}
+                  {block:IfShowPhotoCaptionInIndexPage}
+                    <div class="caption">{Caption}</div>
+                  {/block:IfShowPhotoCaptionInIndexPage}
+                {/block:IndexPage}
+                {block:PermalinkPage}
+                  {block:IfShowPhotoCaptionInPermalinkPage}
+                    <div class="caption">{Caption}</div>
+                  {/block:IfShowPhotoCaptionInPermalinkPage}
+                {/block:PermalinkPage}
               {/block:Caption}
               {block:HighRes}
                 {block:IndexPage}
@@ -1230,7 +1344,16 @@
                   {LinkCloseTag}
                 {/block:IfShow500pxPhoto}
                 {block:Caption}
-                  <div class="caption">{Caption}</div>
+                  {block:IndexPage}
+                    {block:IfShowPhotoCaptionInIndexPage}
+                      <div class="caption">{Caption}</div>
+                    {/block:IfShowPhotoCaptionInIndexPage}
+                  {/block:IndexPage}
+                  {block:PermalinkPage}
+                    {block:IfShowPhotoCaptionInPermalinkPage}
+                      <div class="caption">{Caption}</div>
+                    {/block:IfShowPhotoCaptionInPermalinkPage}
+                  {/block:PermalinkPage}
                 {/block:Caption}
                 {block:HighRes}
                   {block:IndexPage}
@@ -1285,7 +1408,16 @@
               {/block:Photos}
 
               {block:Caption}
-                <div class="caption">{Caption}</div>
+                {block:IndexPage}
+                  {block:IfShowPhotoCaptionInIndexPage}
+                    <div class="caption">{Caption}</div>
+                  {/block:IfShowPhotoCaptionInIndexPage}
+                {/block:IndexPage}
+                {block:PermalinkPage}
+                  {block:IfShowPhotoCaptionInPermalinkPage}
+                    <div class="caption">{Caption}</div>
+                  {/block:IfShowPhotoCaptionInPermalinkPage}
+                {/block:PermalinkPage}
               {/block:Caption}
             {/block:Photoset}
 
@@ -1295,7 +1427,16 @@
               {LinkCloseTag}
 
               {block:Caption}
-                <div class="caption">{Caption}</div>
+                {block:IndexPage}
+                  {block:IfShowPhotoCaptionInIndexPage}
+                    <div class="caption">{Caption}</div>
+                  {/block:IfShowPhotoCaptionInIndexPage}
+                {/block:IndexPage}
+                {block:PermalinkPage}
+                  {block:IfShowPhotoCaptionInPermalinkPage}
+                    <div class="caption">{Caption}</div>
+                  {/block:IfShowPhotoCaptionInPermalinkPage}
+                {/block:PermalinkPage}
               {/block:Caption}
             {/block:Panorama}
 
@@ -1346,38 +1487,64 @@
 
             {block:Video}
               <div class="embed-wrapper">
-                {Video-250}
+                {Video-700}
               </div>
               {block:Caption}
-                <div class="caption">{Caption}</div>
+                {block:IndexPage}
+                  {block:IfShowVideoCaptionInIndexPage}
+                    <div class="caption">{Caption}</div>
+                  {/block:IfShowVideoCaptionInIndexPage}
+                {/block:IndexPage}
+                {block:PermalinkPage}
+                  {block:IfShowVideoCaptionInPermalinkPage}
+                    <div class="caption">{Caption}</div>
+                  {/block:IfShowVideoCaptionInPermalinkPage}
+                {/block:PermalinkPage}
               {/block:Caption}
             {/block:Video}
 
             {block:Audio}
               {block:AudioEmbed}
                 <div class="embed-wrapper">
-                  {AudioEmbed-250}
+                  {AudioEmbed-640}
                 </div>
               {/block:AudioEmbed}
 
+              {block:AudioPlayer}
+                {AudioPlayer}
+              {/block:AudioPlayer}
+
               {block:Caption}
-                <div class="caption">{Caption}</div>
+                {block:IndexPage}
+                  {block:IfShowAudioCaptionInIndexPage}
+                    <div class="caption">{Caption}</div>
+                  {/block:IfShowAudioCaptionInIndexPage}
+                {/block:IndexPage}
+                {block:PermalinkPage}
+                  {block:IfShowAudioCaptionInPermalinkPage}
+                    <div class="caption">{Caption}</div>
+                  {/block:IfShowAudioCaptionInPermalinkPage}
+                {/block:PermalinkPage}
               {/block:Caption}
 
               {block:IndexPage}
                 {block:IfShowAudioTrackInformationInIndexPage}
+                  {block:ExternalAudio}<a href="{ExternalAudioURL}">{lang:Download this track}</a><br/>{/block:ExternalAudio}
                   {block:TrackName}Track Name: {TrackName}<br/>{/block:TrackName}
                   {block:Artist}Artist: {Artist}<br/>{/block:Artist}
+                  {block:PlayCount}Play Count: {PlayCountWithLabel}<br/>{/block:PlayCount}
                   {block:Album}Album: {Album}<br/>{/block:Album}
-                  {block:ExternalAudio}<a href="{ExternalAudioURL}">{lang:Download this track}</a><br/>{/block:ExternalAudio}
+                  {block:AlbumArt}Album Art:<br/><img class="album-art" src="{AlbumArtURL}"/><br/>{/block:AlbumArt}
                 {/block:IfShowAudioTrackInformationInIndexPage}
               {/block:IndexPage}
               {block:PermalinkPage}
                 {block:IfShowAudioTrackInformationInPermalinkPage}
+                  {block:ExternalAudio}<a href="{ExternalAudioURL}">{lang:Download this track}</a><br/>{/block:ExternalAudio}
                   {block:TrackName}Track Name: {TrackName}<br/>{/block:TrackName}
                   {block:Artist}Artist: {Artist}<br/>{/block:Artist}
+                  {block:PlayCount}Play Count: {PlayCountWithLabel}<br/>{/block:PlayCount}
                   {block:Album}Album: {Album}<br/>{/block:Album}
-                  {block:ExternalAudio}<a href="{ExternalAudioURL}">{lang:Download this track}</a><br/>{/block:ExternalAudio}
+                  {block:AlbumArt}Album Art:<br/><img class="album-art" src="{AlbumArtURL}"/><br/>{/block:AlbumArt}
                 {/block:IfShowAudioTrackInformationInPermalinkPage}
               {/block:PermalinkPage}
             {/block:Audio}
