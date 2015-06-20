@@ -216,6 +216,8 @@
     <meta name="if:Use IPAex Minchou"                                content="0"/>
     <meta name="if:Use Noto Sans Japanese"                           content="0"/>
     <meta name="if:Use Well Known Japanese Fonts"                    content="0"/>
+    <meta name="if:Use Well Known Japanese Fonts Sans Serif"         content="0"/>
+    <meta name="if:Use Well Known Japanese Fonts Serif"              content="0"/>
     <meta name="if:Use Hanna"                                        content="0"/>
     <meta name="if:Use Jeju Gothic"                                  content="0"/>
     <meta name="if:Use Jeju Hallasan"                                content="0"/>
@@ -245,7 +247,9 @@
     <meta name="select:Top Priority Font for Title"    content="IPAexG,"                                         title="IPAex Gothic (Japanese)"                                />
     <meta name="select:Top Priority Font for Title"    content="IPAexM,"                                         title="IPAex Minchou (Japanese)"                               />
     <meta name="select:Top Priority Font for Title"    content="'Noto Sans Japanese',"                           title="Noto Sans Japanese"                                     />
-    <meta name="select:Top Priority Font for Title"    content="YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo," title="Well Known Japanese Fonts"                              />
+    <meta name="select:Top Priority Font for Title"    content="YuMincho,'Hiragino Mincho ProN','@Meiryo',Meiryo,'Droid Sans',Roboto," title="Well Known Japanese Fonts"                              />
+    <meta name="select:Top Priority Font for Title"    content="YuGothic,'Hiragino Kaku Gothic ProN','@Meiryo',Meiryo,'Droid Sans',Roboto,sans-serif,"  title="Well Known Japanese Fonts Sans Serif"/>
+    <meta name="select:Top Priority Font for Title"    content="YuMincho,'Hiragino Mincho ProN',serif,"                                                 title="Well Known Japanese Fonts Serif"     />
     <meta name="select:Top Priority Font for Title"    content="Hanna,"                                          title="Hanna (Korean)"                                         />
     <meta name="select:Top Priority Font for Title"    content="'Jeju Gothic',"                                  title="Jeju Gothic (Korean)"                                   />
     <meta name="select:Top Priority Font for Title"    content="'Jeju Hallasan',"                                title="Jeju Hallasan (Korean)"                                 />
@@ -275,7 +279,9 @@
     <meta name="select:Top Priority Font for Contents" content="IPAexG,"                                         title="IPAex Gothic (Japanese)"                                />
     <meta name="select:Top Priority Font for Contents" content="IPAexM,"                                         title="IPAex Minchou (Japanese)"                               />
     <meta name="select:Top Priority Font for Contents" content="'Noto Sans Japanese',"                           title="Noto Sans Japanese"                                     />
-    <meta name="select:Top Priority Font for Contents" content="YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo," title="Well Known Japanese Fonts"                              />
+    <meta name="select:Top Priority Font for Contents" content="YuMincho,'Hiragino Mincho ProN','@Meiryo',Meiryo,'Droid Sans',Roboto," title="Well Known Japanese Fonts"                              />
+    <meta name="select:Top Priority Font for Contents" content="YuGothic,'Hiragino Kaku Gothic ProN','@Meiryo',Meiryo,'Droid Sans',Roboto,sans-serif,"  title="Well Known Japanese Fonts Sans Serif"/>
+    <meta name="select:Top Priority Font for Contents" content="YuMincho,'Hiragino Mincho ProN',serif,"                                                 title="Well Known Japanese Fonts Serif"     />
     <meta name="select:Top Priority Font for Contents" content="Hanna,"                                          title="Hanna (Korean)"                                         />
     <meta name="select:Top Priority Font for Contents" content="'Jeju Gothic',"                                  title="Jeju Gothic (Korean)"                                   />
     <meta name="select:Top Priority Font for Contents" content="'Jeju Hallasan',"                                title="Jeju Hallasan (Korean)"                                 />
@@ -728,9 +734,19 @@
       {/block:IfUseNotoSansJapanese}
       {block:IfUseWellKnownJapaneseFonts}
         .WellKnownJapaneseFonts, .WellKnownJapaneseFonts * {
-          font-family: YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo !important;
+          font-family: YuMincho,'Hiragino Mincho ProN','@Meiryo',Meiryo,'Droid Sans',Roboto !important;
         }
       {/block:IfUseWellKnownJapaneseFonts}
+      {block:IfUseWellKnownJapaneseFontsSansSerif}
+        .WellKnownJapaneseFontsSansSerif, .WellKnownJapaneseFontsSansSerif * {
+          font-family: YuGothic,'Hiragino Kaku Gothic ProN','@Meiryo',Meiryo,'Droid Sans',Roboto !important;
+        }
+      {/block:IfUseWellKnownJapaneseFontsSansSerif}
+      {block:IfUseWellKnownJapaneseFontsSerif}
+        .WellKnownJapaneseFontsSerif, .WellKnownJapaneseFontsSerif * {
+          font-family: YuMincho,'Hiragino Mincho ProN' !important;
+        }
+      {/block:IfUseWellKnownJapaneseFontsSerif}
       {block:IfUseHanna}
         .Hanna, .Hanna * {
           font-family: Hanna !important;
