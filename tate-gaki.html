@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Tumblrテーマ「縦書き」 製作：メタスキーマ -->
+<!-- Tumblrテーマ「オプションフォント」 製作：メタスキーマ -->
 <html{select:Lang Attribute of HTML Element}>
   <head>
     {MobileAppHeaders}
@@ -30,6 +30,15 @@
     <meta name="select:One Post Area Border Style" content="none"   title="None"  />
     <meta name="if:Show Post Author Group Member" content="0"/>
     <meta name="if:Show Group Members Icon" content="0"/>
+    <meta name="select:Page width" content="720px"  title="720px" />
+    <meta name="select:Page width" content="800px"  title="800px" />
+    <meta name="select:Page width" content="960px"  title="960px" />
+    <meta name="select:Page width" content="1024px" title="1024px"/>
+    <meta name="select:Page width" content="1280px" title="1280px"/>
+    <meta name="select:Page width" content="1600px" title="1600px"/>
+    <meta name="select:Page width" content="1920px" title="1920px"/>
+    <meta name="select:Page width" content="2048px" title="2048px"/>
+    <meta name="select:Page width" content="auto"   title="auto"  />
     <meta name="if:Show Page Header Navigation" content="1"/>
     <meta name="if:Show Page Footer Navigation" content="1"/>
     <meta name="if:Show Home Navigation" content="1"/>
@@ -233,6 +242,7 @@
     <meta name="if:Use cwTeXKai"                                     content="0"/>
     <meta name="if:Use cwTeXMing"                                    content="0"/>
     <meta name="if:Use cwTeXYen"                                     content="0"/>
+    <meta name="if:Use Lobster"                                      content="0"/>
     <meta name="select:Top Priority Font for Title"    content=""                                                title="Basic Font"                                             />
     <meta name="select:Top Priority Font for Title"    content="HuiFont,"                                        title="Hui Font Fixed Pitch (Japanese)"                        />
     <meta name="select:Top Priority Font for Title"    content="HuiFontP,"                                       title="Hui Font Proportional Pitch (Japanese)"                 />
@@ -247,7 +257,7 @@
     <meta name="select:Top Priority Font for Title"    content="IPAexG,"                                         title="IPAex Gothic (Japanese)"                                />
     <meta name="select:Top Priority Font for Title"    content="IPAexM,"                                         title="IPAex Minchou (Japanese)"                               />
     <meta name="select:Top Priority Font for Title"    content="'Noto Sans Japanese',"                           title="Noto Sans Japanese"                                     />
-    <meta name="select:Top Priority Font for Title"    content="YuMincho,'Hiragino Mincho ProN','@Meiryo',Meiryo,'Droid Sans',Roboto," title="Well Known Japanese Fonts"                              />
+    <meta name="select:Top Priority Font for Title"    content="YuMincho,'Hiragino Mincho ProN','@Meiryo',Meiryo,'Droid Sans',Roboto,"                  title="Well Known Japanese Fonts"           />
     <meta name="select:Top Priority Font for Title"    content="YuGothic,'Hiragino Kaku Gothic ProN','@Meiryo',Meiryo,'Droid Sans',Roboto,sans-serif,"  title="Well Known Japanese Fonts Sans Serif"/>
     <meta name="select:Top Priority Font for Title"    content="YuMincho,'Hiragino Mincho ProN',serif,"                                                 title="Well Known Japanese Fonts Serif"     />
     <meta name="select:Top Priority Font for Title"    content="Hanna,"                                          title="Hanna (Korean)"                                         />
@@ -265,6 +275,7 @@
     <meta name="select:Top Priority Font for Title"    content="'cwTeXKai',"                                     title="cwTeXKai (Chinese_traditional)"                         />
     <meta name="select:Top Priority Font for Title"    content="'cwTeXMing',"                                    title="cwTeXMing (Chinese_traditional)"                        />
     <meta name="select:Top Priority Font for Title"    content="'cwTeXYen',"                                     title="cwTeXYen (Chinese_traditional)"                         />
+    <meta name="select:Top Priority Font for Title"    content="'Lobster',cursive,"                              title="Lobster (Latin, Vietnamese, Cyrillic)"                  />
     <meta name="select:Top Priority Font for Contents" content=""                                                title="Basic Font"                                             />
     <meta name="select:Top Priority Font for Contents" content="HuiFont,"                                        title="Hui Font Fixed Pitch (Japanese)"                        />
     <meta name="select:Top Priority Font for Contents" content="HuiFontP,"                                       title="Hui Font Proportional Pitch (Japanese)"                 />
@@ -279,7 +290,7 @@
     <meta name="select:Top Priority Font for Contents" content="IPAexG,"                                         title="IPAex Gothic (Japanese)"                                />
     <meta name="select:Top Priority Font for Contents" content="IPAexM,"                                         title="IPAex Minchou (Japanese)"                               />
     <meta name="select:Top Priority Font for Contents" content="'Noto Sans Japanese',"                           title="Noto Sans Japanese"                                     />
-    <meta name="select:Top Priority Font for Contents" content="YuMincho,'Hiragino Mincho ProN','@Meiryo',Meiryo,'Droid Sans',Roboto," title="Well Known Japanese Fonts"                              />
+    <meta name="select:Top Priority Font for Contents" content="YuMincho,'Hiragino Mincho ProN','@Meiryo',Meiryo,'Droid Sans',Roboto,"                  title="Well Known Japanese Fonts"           />
     <meta name="select:Top Priority Font for Contents" content="YuGothic,'Hiragino Kaku Gothic ProN','@Meiryo',Meiryo,'Droid Sans',Roboto,sans-serif,"  title="Well Known Japanese Fonts Sans Serif"/>
     <meta name="select:Top Priority Font for Contents" content="YuMincho,'Hiragino Mincho ProN',serif,"                                                 title="Well Known Japanese Fonts Serif"     />
     <meta name="select:Top Priority Font for Contents" content="Hanna,"                                          title="Hanna (Korean)"                                         />
@@ -297,6 +308,7 @@
     <meta name="select:Top Priority Font for Contents" content="'cwTeXKai',"                                     title="cwTeXKai (Chinese_traditional)"                         />
     <meta name="select:Top Priority Font for Contents" content="'cwTeXMing',"                                    title="cwTeXMing (Chinese_traditional)"                        />
     <meta name="select:Top Priority Font for Contents" content="'cwTeXYen',"                                     title="cwTeXYen (Chinese_traditional)"                         />
+    <meta name="select:Top Priority Font for Contents" content="'Lobster',cursive,"                              title="Lobster (Latin, Vietnamese, Cyrillic)"                  />
     <meta name="select:Font Weight for Title"    content="bold "   title="Default"/>
     <meta name="select:Font Weight for Title"    content="normal"  title="Normal" />
     <meta name="select:Font Weight for Title"    content="bold"    tilte="Bold"   />
@@ -323,19 +335,19 @@
     <meta name="select:Font Size for Contents" content="font-size:large;"    title="large"        />
     <meta name="select:Font Size for Contents" content="font-size:x-large;"  title="x-large"      />
     <meta name="select:Font Size for Contents" content="font-size:xx-large;" title="xx-large"     />
-    <meta name="if:Show 250px Photo" content="1"/>
-    <meta name="if:Show 400px Photo" content="0"/>
-    <meta name="if:Show 500px Photo" content="0"/>
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" href="{Favicon}"/>
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
     <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}"/>
     {block:IfUseFontAwesome}
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
     {/block:IfUseFontAwesome}
     {block:IfUseNotoSansJapanese}
       <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"/>
     {/block:IfUseNotoSansJapanese}
+    {block:IfUseLobster}
+      <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext,vietnamese,cyrillic' rel='stylesheet' type='text/css'/>
+    {/block:IfUseLobster}
     <style>
       * {
         word-wrap:
@@ -532,13 +544,13 @@
       {/block:IfUsecwTeXYen}
       html, body, * {
         writing-mode:
-          vertical-rl;
+          horizontal-tb;
         -ms-writing-mode:
-          tb-rl;
+          lr-tb;
         -webkit-writing-mode:
-          vertical-rl;
+          horizontal-tb;
         -epub-writing-mode:
-          vertical-rl;
+          horizontal-tb;
         text-orientation:
           mixed;
         -webkit-text-orientation:
@@ -590,7 +602,7 @@
       header#page-header, nav#page-header-nav,
       footer#page-footer, nav#page-footer-nav{
         text-align:
-          left;
+          center;
         margin-left:
           auto;
         margin-right:
@@ -606,7 +618,7 @@
         overflow:
           hidden;
         text-align:
-          left;
+          center;
       }
       div.header-image, div.header-avatar ,
       img.header-image, img.header-avatar ,
@@ -617,11 +629,17 @@
           none;
       }
       div.header-image, img.header-image {
+        {block:NoStretchHeaderImage}
           max-width:
             100%;
+        {/block:NoStretchHeaderImage}
+        {block:StretchHeaderImage}
+          width:
+            100%;
+        {/block:StretchHeaderImage}
       }
       div.header-image {
-        margin:
+        margin-bottom:
           0.5rem;
       }
       img.header-image {
@@ -822,6 +840,11 @@
           font-family: 'cwTeXYen' !important;
         }
       {/block:IfUsecwTeXYen}
+      {block:IfUseLobster}
+        .Lobster, .Lobster * {
+          font-family: 'Lobster' !important;
+        }
+      {/block:IfUseLobster}
       p.description {
         font-size:
           medium;
@@ -855,6 +878,12 @@
           inline-block;
       }
       section#page {
+        max-width:
+          {select:Page width};
+        margin-left:
+          auto;
+        margin-right:
+          auto;
       }
       section#posts {
         color:
@@ -941,7 +970,9 @@
       div.question, div.answer {
         border:
           1px solid {color:One Post Area Text Color};
-        margin:
+        margin-top:
+          0.5rem;
+        margin-bottom:
           0.5rem;
       }
       div.reblog-control, div.like-control {
@@ -958,15 +989,13 @@
       }
       div.html_photoset {
         text-align:
-          left;
+          center;
       }
       div.embed-wrapper, div.tumblr_video_container {
-        max-height:
-          100%;
         max-width:
           100%;
         text-align:
-          left;
+          center;
         margin-left:
           auto;
         margin-right:
@@ -976,23 +1005,27 @@
       div.embed-wrapper   iframe.tumblr_audio_player,
       div.embed-wrapper   iframe.tumblr_video_iframe,
       div.embed-wrapper > iframe {
-        max-height:
-          100%;
         max-width:
           100%;
       }
       article.post > iframe.twitter-tweet.twitter-tweet-rendered {
+        margin-left:
+          auto!important;
+        margin-right:
+          auto!important;
       }
       img.photo-content, img.album-art {
-        max-height:
+        width:
           100%;
-        max-width:
-          100%;
+        height:
+          auto;
+        text-align:
+          center;
       }
       article.post.text img {
-        max-height:
+        max-width:
           100%;
-        width:
+        height:
           auto;
       }
       span.inline-block {
@@ -1056,9 +1089,9 @@
           auto;
       }
       li.like_post img {
-        max-height:
+        max-width:
           100%;
-        width:
+        height:
           auto;
       }
       li.like_post blockquote {
@@ -1066,6 +1099,8 @@
           0.5rem;
         padding:
           0.5rem;
+        border-left:
+          1px solid {color:Page Footer Text Color};
       }
       li.like_post ol, li.like_post ul {
       }
@@ -1094,38 +1129,32 @@
           0.5rem;
       }
       div.link-thumbnail-wrapper {
-        margin:
+        margin-top:
           0.5rem;
-        text-align:
-          left;
-      }
-      img.link-thumbnail {
-        max-height:
-          100%;
-        width:
+        margin-bottom:
+          0.5rem;
+        margin-right:
+          auto;
+        margin-left:
           auto;
         text-align:
           center;
       }
-      iframe#submit_form, form#ask_form * {
-        writing-mode:
-          horizontal-tb;
-        -ms-writing-mode:
-          lr-tb;
-        -webkit-writing-mode:
-          horizontal-tb;
-        -epub-writing-mode:
-          horizontal-tb;
-        text-orientation:
-          mixed;
-        -webkit-text-orientation:
-          mixed;
-        direction:
-          ltr;
-      }
-      iframe#submit_form, form#ask_form {
+      img.link-thumbnail {
         max-width:
           100%;
+        height:
+          auto;
+        text-align:
+          center;
+      }
+      blockquote {
+        margin:
+          0.5rem;
+        padding:
+          0.5rem;
+        border-left:
+          2px solid {color:One Post Area Text Color};
       }
       {CustomCSS}
     </style>
@@ -1167,9 +1196,10 @@
         {block:IfShowPageHeaderNavigation}
           <nav id="page-header-nav">
             {block:IfShowSearchNavigation}
-              <span class="nav-span search-nav">
-                <a href="#footer-search">{lang:Search}</a>
-              </span>
+              <form id="header-search" action="/search" method="get">
+                <input type="text" name="q" value="{SearchQuery}"/>
+                <input type="submit" value="{lang:Search}"/>
+              </form>
             {/block:IfShowSearchNavigation}
 
             {block:ifShowHomeNavigation}
@@ -1218,7 +1248,7 @@
                     <a href="{NextPage}"> {lang:Next page} </a> 
                   {/block:NextPage}
                 </span>
-                <span class="nav-span-inline text-orientation-upright"> {lang:Page CurrentPage of TotalPages} </span> 
+                <span class="nav-span text-orientation-upright"> {lang:Page CurrentPage of TotalPages} </span> 
               {/block:Pagination}
 
               {block:PermalinkPagination}
@@ -1281,21 +1311,9 @@
             {/block:Text}
 
             {block:Photo}
-              {block:IfShow250pxPhoto}
-                {LinkOpenTag}
-                  <img class="photo-content" src="{PhotoURL-250}" alt="{PhotoAlt}"/>
-                {LinkCloseTag}
-              {/block:IfShow250pxPhoto}
-              {block:IfShow400pxPhoto}
-                {LinkOpenTag}
-                  <img class="photo-content" src="{PhotoURL-400}" alt="{PhotoAlt}"/>
-                {LinkCloseTag}
-              {/block:IfShow400pxPhoto}
-              {block:IfShow500pxPhoto}
-                {LinkOpenTag}
-                  <img class="photo-content" src="{PhotoURL-500}" alt="{PhotoAlt}"/>
-                {LinkCloseTag}
-              {/block:IfShow500pxPhoto}
+              {LinkOpenTag}
+                <img class="photo-content" src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+              {LinkCloseTag}
               {block:Caption}
                 {block:IndexPage}
                   {block:IfShowPhotoCaptionInIndexPage}
@@ -1362,21 +1380,9 @@
 
             {block:Photoset}
               {block:Photos}
-                {block:IfShow250pxPhoto}
-                  {LinkOpenTag}
-                    <img class="photo-content" src="{PhotoURL-250}" alt="{PhotoAlt}"/>
-                  {LinkCloseTag}
-                {/block:IfShow250pxPhoto}
-                {block:IfShow400pxPhoto}
-                  {LinkOpenTag}
-                    <img class="photo-content" src="{PhotoURL-400}" alt="{PhotoAlt}"/>
-                  {LinkCloseTag}
-                {/block:IfShow400pxPhoto}
-                {block:IfShow500pxPhoto}
-                  {LinkOpenTag}
-                    <img class="photo-content" src="{PhotoURL-500}" alt="{PhotoAlt}"/>
-                  {LinkCloseTag}
-                {/block:IfShow500pxPhoto}
+                {LinkOpenTag}
+                  <img class="photo-content" src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                {LinkCloseTag}
                 {block:Caption}
                   {block:IndexPage}
                     {block:IfShowPhotoCaptionInIndexPage}
@@ -1747,7 +1753,7 @@
                     <a href="{NextPage}"> {lang:Next page} </a> 
                   {/block:NextPage}
                 </span>
-                <span class="nav-span-inline text-orientation-upright"> {lang:Page CurrentPage of TotalPages} </span> 
+                <span class="nav-span text-orientation-upright"> {lang:Page CurrentPage of TotalPages} </span> 
               {/block:Pagination}
 
               {block:PermalinkPagination}
@@ -1797,7 +1803,7 @@
             <span class="powered-by-tumblr">{lang:Powered by Tumblr 2}</span>
           {/block:IfShowPoweredByTumblr}
           {block:IfShowInstallThisTheme}
-            <span class="install-this-theme"><a href="http://www.tumblr.com/theme/39763">{lang:Install this theme}</a></span>
+            <span class="install-this-theme"><a href="http://www.tumblr.com/theme/39812">{lang:Install this theme}</a></span>
           {/block:IfShowInstallThisTheme}
         </div>
       </footer>
