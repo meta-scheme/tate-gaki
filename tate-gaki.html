@@ -233,6 +233,7 @@
     <meta name="if:Use cwTeXKai"                                     content="0"/>
     <meta name="if:Use cwTeXMing"                                    content="0"/>
     <meta name="if:Use cwTeXYen"                                     content="0"/>
+    <meta name="if:Use Lobster"                                      content="0"/>
     <meta name="select:Top Priority Font for Title"    content=""                                                title="Basic Font"                                             />
     <meta name="select:Top Priority Font for Title"    content="HuiFont,"                                        title="Hui Font Fixed Pitch (Japanese)"                        />
     <meta name="select:Top Priority Font for Title"    content="HuiFontP,"                                       title="Hui Font Proportional Pitch (Japanese)"                 />
@@ -265,6 +266,7 @@
     <meta name="select:Top Priority Font for Title"    content="'cwTeXKai',"                                     title="cwTeXKai (Chinese_traditional)"                         />
     <meta name="select:Top Priority Font for Title"    content="'cwTeXMing',"                                    title="cwTeXMing (Chinese_traditional)"                        />
     <meta name="select:Top Priority Font for Title"    content="'cwTeXYen',"                                     title="cwTeXYen (Chinese_traditional)"                         />
+    <meta name="select:Top Priority Font for Title"    content="'Lobster',cursive,"                              title="Lobster (Latin, Vietnamese, Cyrillic)"                  />
     <meta name="select:Top Priority Font for Contents" content=""                                                title="Basic Font"                                             />
     <meta name="select:Top Priority Font for Contents" content="HuiFont,"                                        title="Hui Font Fixed Pitch (Japanese)"                        />
     <meta name="select:Top Priority Font for Contents" content="HuiFontP,"                                       title="Hui Font Proportional Pitch (Japanese)"                 />
@@ -297,6 +299,7 @@
     <meta name="select:Top Priority Font for Contents" content="'cwTeXKai',"                                     title="cwTeXKai (Chinese_traditional)"                         />
     <meta name="select:Top Priority Font for Contents" content="'cwTeXMing',"                                    title="cwTeXMing (Chinese_traditional)"                        />
     <meta name="select:Top Priority Font for Contents" content="'cwTeXYen',"                                     title="cwTeXYen (Chinese_traditional)"                         />
+    <meta name="select:Top Priority Font for Contents" content="'Lobster',cursive,"                              title="Lobster (Latin, Vietnamese, Cyrillic)"                  />
     <meta name="select:Font Weight for Title"    content="bold "   title="Default"/>
     <meta name="select:Font Weight for Title"    content="normal"  title="Normal" />
     <meta name="select:Font Weight for Title"    content="bold"    tilte="Bold"   />
@@ -331,11 +334,14 @@
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
     <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}"/>
     {block:IfUseFontAwesome}
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
     {/block:IfUseFontAwesome}
     {block:IfUseNotoSansJapanese}
       <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"/>
     {/block:IfUseNotoSansJapanese}
+    {block:IfUseLobster}
+      <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext,vietnamese,cyrillic' rel='stylesheet' type='text/css'/>
+    {/block:IfUseLobster}
     <style>
       * {
         word-wrap:
@@ -822,6 +828,11 @@
           font-family: 'cwTeXYen' !important;
         }
       {/block:IfUsecwTeXYen}
+      {block:IfUseLobster}
+        .Lobster, .Lobster * {
+          font-family: 'Lobster' !important;
+        }
+      {/block:IfUseLobster}
       p.description {
         font-size:
           medium;
