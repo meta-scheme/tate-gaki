@@ -236,6 +236,9 @@
     <meta name="if:Use cwTeXMing"                                    content="0"/>
     <meta name="if:Use cwTeXYen"                                     content="0"/>
     <meta name="if:Use Lobster"                                      content="0"/>
+    <meta name="if:Use Amiri"                                        content="0"/>
+    <meta name="if:Use Hind"                                         content="0"/>
+    <meta name="if:Use Timmana"                                      content="0"/>
     <meta name="select:Top Priority Font for Title"    content=""                                                title="Basic Font"                                             />
     <meta name="select:Top Priority Font for Title"    content="HuiFont,"                                        title="Hui Font Fixed Pitch (Japanese)"                        />
     <meta name="select:Top Priority Font for Title"    content="HuiFontP,"                                       title="Hui Font Proportional Pitch (Japanese)"                 />
@@ -269,6 +272,9 @@
     <meta name="select:Top Priority Font for Title"    content="'cwTeXMing',"                                    title="cwTeXMing (Chinese_traditional)"                        />
     <meta name="select:Top Priority Font for Title"    content="'cwTeXYen',"                                     title="cwTeXYen (Chinese_traditional)"                         />
     <meta name="select:Top Priority Font for Title"    content="'Lobster',cursive,"                              title="Lobster (Latin, Vietnamese, Cyrillic)"                  />
+    <meta name="select:Top Priority Font for Title"    content="'Amiri',serif,"                                  title="Amiri (Latin, Arabic)"                                  />
+    <meta name="select:Top Priority Font for Title"    content="'Hind',sans-serif,"                              title="Hind (Latin, Devanagari)"                               />
+    <meta name="select:Top Priority Font for Title"    content="'Timmana',sans-serif,"                           title="Timmana (Latin, Telugu)"                                />
     <meta name="select:Top Priority Font for Contents" content=""                                                title="Basic Font"                                             />
     <meta name="select:Top Priority Font for Contents" content="HuiFont,"                                        title="Hui Font Fixed Pitch (Japanese)"                        />
     <meta name="select:Top Priority Font for Contents" content="HuiFontP,"                                       title="Hui Font Proportional Pitch (Japanese)"                 />
@@ -302,6 +308,9 @@
     <meta name="select:Top Priority Font for Contents" content="'cwTeXMing',"                                    title="cwTeXMing (Chinese_traditional)"                        />
     <meta name="select:Top Priority Font for Contents" content="'cwTeXYen',"                                     title="cwTeXYen (Chinese_traditional)"                         />
     <meta name="select:Top Priority Font for Contents" content="'Lobster',cursive,"                              title="Lobster (Latin, Vietnamese, Cyrillic)"                  />
+    <meta name="select:Top Priority Font for Contents" content="'Amiri',serif,"                                  title="Amiri (Latin, Arabic)"                                  />
+    <meta name="select:Top Priority Font for Contents" content="'Hind',sans-serif,"                              title="Hind (Latin, Devanagari)"                               />
+    <meta name="select:Top Priority Font for Contents" content="'Timmana',sans-serif,"                           title="Timmana (Latin, Telugu)"                                />
     <meta name="select:Font Weight for Title"    content="bold "   title="Default"/>
     <meta name="select:Font Weight for Title"    content="normal"  title="Normal" />
     <meta name="select:Font Weight for Title"    content="bold"    tilte="Bold"   />
@@ -341,9 +350,63 @@
     {block:IfUseNotoSansJapanese}
       <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"/>
     {/block:IfUseNotoSansJapanese}
+    {block:IfUseHanna}
+      <link href="http://fonts.googleapis.com/earlyaccess/hanna.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUseHanna}
+    {block:IfUseJejuHallasan}
+      <link href="http://fonts.googleapis.com/earlyaccess/jejuhallasan.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUseJejuHallasan}
+    {block:IfUseJejuGothic}
+      <link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUseJejuGothic}
+    {block:IfUseJejuMyeongjo}
+      <link href="http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUseJejuMyeongjo}
+    {block:IfUseKoPubBatang}
+      <link href="http://fonts.googleapis.com/earlyaccess/kopubbatang.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUseKoPubBatang}
+    {block:IfUseNanumBrushScript}
+      <link href="http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUseNanumBrushScript}
+    {block:IfUseNanumGothic}
+      <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUseNanumGothic}
+    {block:IfUseNanumGothicCoding}
+      <link href="http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUseNanumGothicCoding}
+    {block:IfUseNanumMyeongjo}
+      <link href="http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUseNanumMyeongjo}
+    {block:IfUseNanumPenScript}
+      <link href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUseNanumPenScript}
+    {block:IfUsecwTeXFangSong}
+      <link href="http://fonts.googleapis.com/earlyaccess/cwtexfangsong.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUsecwTeXFangSong}
+    {block:IfUsecwTeXHei}
+      <link href="http://fonts.googleapis.com/earlyaccess/cwtexhei.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUsecwTeXHei}
+    {block:IfUsecwTeXKai}
+      <link href="http://fonts.googleapis.com/earlyaccess/cwtexkai.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUsecwTeXKai}
+    {block:IfUsecwTeXMing}
+      <link href="http://fonts.googleapis.com/earlyaccess/cwtexming.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUsecwTeXMing}
+    {block:IfUsecwTeXYen}
+      <link href="http://fonts.googleapis.com/earlyaccess/cwtexyen.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUsecwTeXYen}
     {block:IfUseLobster}
       <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext,vietnamese,cyrillic' rel='stylesheet' type='text/css'/>
     {/block:IfUseLobster}
+    {block:IfUseAmiri}
+      <link href='http://fonts.googleapis.com/css?family=Amiri:400italic,700italic,400,700&subset=latin,arabic' rel='stylesheet' type='text/css'/>
+    {/block:IfUseAmiri}
+    {block:IfUseHind}
+      <link href='http://fonts.googleapis.com/css?family=Hind:400,300,500,600,700&subset=latin,devanagari,latin-ext' rel='stylesheet' type='text/css'/>
+    {/block:IfUseHind}
+    {block:IfUseTimmana}
+      <link href='http://fonts.googleapis.com/css?family=Timmana&subset=telugu,latin' rel='stylesheet' type='text/css'/>
+    {/block:IfUseTimmana}
     <style>
       * {
         word-wrap:
@@ -835,6 +898,21 @@
           font-family: 'Lobster' !important;
         }
       {/block:IfUseLobster}
+      {block:IfUseAmiri}
+        .Amiri, .Amiri * {
+          font-family: 'Amiri' !important;
+        }
+      {/block:IfUseAmiri}
+      {block:IfUseHind}
+        .Hind, .Hind * {
+          font-family: 'Hind' !important;
+        }
+      {/block:IfUseHind}
+      {block:IfUseTimmana}
+        .Timmana, .Timmana * {
+          font-family: 'Timmana' !important;
+        }
+      {/block:IfUseTimmana}
       p.description {
         font-size:
           medium;
