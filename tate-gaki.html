@@ -235,10 +235,13 @@
     <meta name="if:Use cwTeXKai"                                     content="0"/>
     <meta name="if:Use cwTeXMing"                                    content="0"/>
     <meta name="if:Use cwTeXYen"                                     content="0"/>
+    <meta name="if:Use Open Sans"                                    content="0"/>
+    <meta name="if:Use Roboto"                                       content="0"/>
     <meta name="if:Use Lobster"                                      content="0"/>
     <meta name="if:Use Amiri"                                        content="0"/>
     <meta name="if:Use Hind"                                         content="0"/>
     <meta name="if:Use Timmana"                                      content="0"/>
+    <meta name="if:Use Pacifico"                                     content="0"/>
     <meta name="select:Top Priority Font for Title"    content=""                                                title="Basic Font"                                             />
     <meta name="select:Top Priority Font for Title"    content="HuiFont,"                                        title="Hui Font Fixed Pitch (Japanese)"                        />
     <meta name="select:Top Priority Font for Title"    content="HuiFontP,"                                       title="Hui Font Proportional Pitch (Japanese)"                 />
@@ -271,10 +274,13 @@
     <meta name="select:Top Priority Font for Title"    content="'cwTeXKai',"                                     title="cwTeXKai (Chinese_traditional)"                         />
     <meta name="select:Top Priority Font for Title"    content="'cwTeXMing',"                                    title="cwTeXMing (Chinese_traditional)"                        />
     <meta name="select:Top Priority Font for Title"    content="'cwTeXYen',"                                     title="cwTeXYen (Chinese_traditional)"                         />
+    <meta name="select:Top Priority Font for Title"    content="'Open Sans',sans-serif,"                         title="Open Sans (Latin, Vietnamese, Cyrillic, Greek)"         />
+    <meta name="select:Top Priority Font for Title"    content="'Roboto',sans-serif,"                            title="Roboto (Latin, Vietnamese, Cyrillic, Greek)"            />
     <meta name="select:Top Priority Font for Title"    content="'Lobster',cursive,"                              title="Lobster (Latin, Vietnamese, Cyrillic)"                  />
     <meta name="select:Top Priority Font for Title"    content="'Amiri',serif,"                                  title="Amiri (Latin, Arabic)"                                  />
     <meta name="select:Top Priority Font for Title"    content="'Hind',sans-serif,"                              title="Hind (Latin, Devanagari)"                               />
     <meta name="select:Top Priority Font for Title"    content="'Timmana',sans-serif,"                           title="Timmana (Latin, Telugu)"                                />
+    <meta name="select:Top Priority Font for Title"    content="'Pacifico',cursive,"                             title="Pacifico (Latin)"                                       />
     <meta name="select:Top Priority Font for Contents" content=""                                                title="Basic Font"                                             />
     <meta name="select:Top Priority Font for Contents" content="HuiFont,"                                        title="Hui Font Fixed Pitch (Japanese)"                        />
     <meta name="select:Top Priority Font for Contents" content="HuiFontP,"                                       title="Hui Font Proportional Pitch (Japanese)"                 />
@@ -307,10 +313,13 @@
     <meta name="select:Top Priority Font for Contents" content="'cwTeXKai',"                                     title="cwTeXKai (Chinese_traditional)"                         />
     <meta name="select:Top Priority Font for Contents" content="'cwTeXMing',"                                    title="cwTeXMing (Chinese_traditional)"                        />
     <meta name="select:Top Priority Font for Contents" content="'cwTeXYen',"                                     title="cwTeXYen (Chinese_traditional)"                         />
+    <meta name="select:Top Priority Font for Contents" content="'Open Sans',sans-serif,"                         title="Open Sans (Latin, Vietnamese, Cyrillic, Greek)"         />
+    <meta name="select:Top Priority Font for Contents" content="'Roboto',sans-serif,"                            title="Roboto (Latin, Vietnamese, Cyrillic, Greek)"            />
     <meta name="select:Top Priority Font for Contents" content="'Lobster',cursive,"                              title="Lobster (Latin, Vietnamese, Cyrillic)"                  />
     <meta name="select:Top Priority Font for Contents" content="'Amiri',serif,"                                  title="Amiri (Latin, Arabic)"                                  />
     <meta name="select:Top Priority Font for Contents" content="'Hind',sans-serif,"                              title="Hind (Latin, Devanagari)"                               />
     <meta name="select:Top Priority Font for Contents" content="'Timmana',sans-serif,"                           title="Timmana (Latin, Telugu)"                                />
+    <meta name="select:Top Priority Font for Contents" content="'Pacifico',cursive,"                             title="Pacifico (Latin)"                                       />
     <meta name="select:Font Weight for Title"    content="bold "   title="Default"/>
     <meta name="select:Font Weight for Title"    content="normal"  title="Normal" />
     <meta name="select:Font Weight for Title"    content="bold"    tilte="Bold"   />
@@ -395,6 +404,12 @@
     {block:IfUsecwTeXYen}
       <link href="http://fonts.googleapis.com/earlyaccess/cwtexyen.css" rel="stylesheet" type="text/css"/>
     {/block:IfUsecwTeXYen}
+    {block:IfUseOpenSans}
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'/>
+    {/block:IfUseOpenSans}
+    {block:IfUseRoboto}
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'/>
+    {/block:IfUseRoboto}
     {block:IfUseLobster}
       <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext,vietnamese,cyrillic' rel='stylesheet' type='text/css'/>
     {/block:IfUseLobster}
@@ -407,6 +422,9 @@
     {block:IfUseTimmana}
       <link href='http://fonts.googleapis.com/css?family=Timmana&subset=telugu,latin' rel='stylesheet' type='text/css'/>
     {/block:IfUseTimmana}
+    {block:IfUsePacifico}
+      <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    {/block:IfUsePacifico}
     <style>
       * {
         word-wrap:
@@ -893,6 +911,16 @@
           font-family: 'cwTeXYen' !important;
         }
       {/block:IfUsecwTeXYen}
+      {block:IfUseOpenSans}
+        .OpenSans, .OpenSans * {
+          font-family: 'Open Sans' !important;
+        }
+      {/block:IfUseOpenSans}
+      {block:IfUseRoboto}
+        .Roboto, .Roboto * {
+          font-family: 'Roboto' !important;
+        }
+      {/block:IfUseRoboto}
       {block:IfUseLobster}
         .Lobster, .Lobster * {
           font-family: 'Lobster' !important;
@@ -913,6 +941,11 @@
           font-family: 'Timmana' !important;
         }
       {/block:IfUseTimmana}
+      {block:IfUsePacifico}
+        .Pacifico, .Pacifico * {
+          font-family: 'Pacifico' !important;
+        }
+      {/block:IfUsePacifico}
       p.description {
         font-size:
           medium;
