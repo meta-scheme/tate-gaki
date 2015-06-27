@@ -239,6 +239,8 @@
     <meta name="if:Use Roboto"                                       content="0"/>
     <meta name="if:Use Lobster"                                      content="0"/>
     <meta name="if:Use Amiri"                                        content="0"/>
+    <meta name="if:Use Lateef"                                       content="0"/>
+    <meta name="if:Use Scheherazade"                                 content="0"/>
     <meta name="if:Use Hind"                                         content="0"/>
     <meta name="if:Use Timmana"                                      content="0"/>
     <meta name="if:Use Pacifico"                                     content="0"/>
@@ -278,6 +280,8 @@
     <meta name="select:Top Priority Font for Title"    content="'Roboto',sans-serif,"                            title="Roboto (Latin, Vietnamese, Cyrillic, Greek)"            />
     <meta name="select:Top Priority Font for Title"    content="'Lobster',cursive,"                              title="Lobster (Latin, Vietnamese, Cyrillic)"                  />
     <meta name="select:Top Priority Font for Title"    content="'Amiri',serif,"                                  title="Amiri (Latin, Arabic)"                                  />
+    <meta name="select:Top Priority Font for Title"    content="'Lateef',cursive,"                               title="Lateef (Latin, Arabic)"                                 />
+    <meta name="select:Top Priority Font for Title"    content="'Scheherazade',serif,"                           title="Scheherazade (Latin, Arabic)"                           />
     <meta name="select:Top Priority Font for Title"    content="'Hind',sans-serif,"                              title="Hind (Latin, Devanagari)"                               />
     <meta name="select:Top Priority Font for Title"    content="'Timmana',sans-serif,"                           title="Timmana (Latin, Telugu)"                                />
     <meta name="select:Top Priority Font for Title"    content="'Pacifico',cursive,"                             title="Pacifico (Latin)"                                       />
@@ -317,6 +321,8 @@
     <meta name="select:Top Priority Font for Contents" content="'Roboto',sans-serif,"                            title="Roboto (Latin, Vietnamese, Cyrillic, Greek)"            />
     <meta name="select:Top Priority Font for Contents" content="'Lobster',cursive,"                              title="Lobster (Latin, Vietnamese, Cyrillic)"                  />
     <meta name="select:Top Priority Font for Contents" content="'Amiri',serif,"                                  title="Amiri (Latin, Arabic)"                                  />
+    <meta name="select:Top Priority Font for Contents" content="'Lateef',cursive,"                               title="Lateef (Latin, Arabic)"                                 />
+    <meta name="select:Top Priority Font for Contents" content="'Scheherazade', serif,"                          title="Scheherazade (Latin, Arabic)"                           />
     <meta name="select:Top Priority Font for Contents" content="'Hind',sans-serif,"                              title="Hind (Latin, Devanagari)"                               />
     <meta name="select:Top Priority Font for Contents" content="'Timmana',sans-serif,"                           title="Timmana (Latin, Telugu)"                                />
     <meta name="select:Top Priority Font for Contents" content="'Pacifico',cursive,"                             title="Pacifico (Latin)"                                       />
@@ -416,6 +422,12 @@
     {block:IfUseAmiri}
       <link href='http://fonts.googleapis.com/css?family=Amiri:400italic,700italic,400,700&subset=latin,arabic' rel='stylesheet' type='text/css'/>
     {/block:IfUseAmiri}
+    {block:IfUseLateef}
+      <link href='http://fonts.googleapis.com/css?family=Lateef&subset=arabic,latin' rel='stylesheet' type='text/css'>
+    {/block:IfUseLateef}
+    {block:IfUseScheherazade}
+      <link href='http://fonts.googleapis.com/css?family=Scheherazade&subset=arabic,latin' rel='stylesheet' type='text/css'/>
+    {/block:IfUseScheherazade}
     {block:IfUseHind}
       <link href='http://fonts.googleapis.com/css?family=Hind:400,300,500,600,700&subset=latin,devanagari,latin-ext' rel='stylesheet' type='text/css'/>
     {/block:IfUseHind}
@@ -931,6 +943,16 @@
           font-family: 'Amiri' !important;
         }
       {/block:IfUseAmiri}
+      {block:IfUseLateef}
+        .Lateef, .Lateef * {
+          font-family: 'Lateef' !important;
+        }
+      {/block:IfUseLateef}
+      {block:IfUseScheherazade}
+        .Scheherazade, .Scheherazade * {
+          font-family: 'Scheherazade' !important;
+        }
+      {/block:IfUseScheherazade}
       {block:IfUseHind}
         .Hind, .Hind * {
           font-family: 'Hind' !important;
